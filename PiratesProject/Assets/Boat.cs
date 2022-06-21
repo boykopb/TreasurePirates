@@ -35,7 +35,7 @@ public class Boat : MonoBehaviour
         }
         else if(_pirates.Count > newCountPirate)
         {
-            for (int i = _pirates.Count - 1; i > newCountPirate; i--)
+            for (int i = _pirates.Count - 1; i > newCountPirate - 1; i--)
             {
                 RemovePirate(i);
             }
