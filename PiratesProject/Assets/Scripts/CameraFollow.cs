@@ -1,6 +1,6 @@
 using UnityEngine;
 
-public class FollowTargetLerp : MonoBehaviour
+public class CameraFollow : MonoBehaviour
 {
     [SerializeField] private Transform _target;
     [SerializeField] private float _lerpRate = 5f;
