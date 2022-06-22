@@ -16,7 +16,8 @@ public class Counter : MonoBehaviour
             EventManager.Current.GameOver();
             return;
         }
+        
         EventManager.Current.ChangedValue(CountPirates);
-        Debug.Log("CountPirate = " + CountPirates);
+        //Debug.Log("CountPirate = " + CountPirates);
     }
 }

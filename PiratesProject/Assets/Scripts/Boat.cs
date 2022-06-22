@@ -10,6 +10,7 @@ public class Boat : MonoBehaviour
     [SerializeField] private float _deltaZ = 5f;
     [SerializeField] private float _deltaX = 5f;
     [SerializeField] private Transform _startSpawnPos;
+    [SerializeField] private float _forceToSide = 10f;
     [Range(0, 15)][SerializeField] private int _testCount = 5;
 
     private List<GameObject> _pirates = new List<GameObject>();
@@ -61,7 +62,6 @@ public class Boat : MonoBehaviour
 
     private void AddPirate(Vector3 spawnPos)
     {
-        Debug.Log(spawnPos);
         GameObject pirate = Instantiate(_prefabPirate, transform);
         pirate.transform.localPosition = spawnPos;
         _pirates.Add(pirate);
@@ -71,7 +71,29 @@ public class Boat : MonoBehaviour
     {
         GameObject obj = _pirates[index].gameObject;
         _pirates.Remove(_pirates[index]);
-        Destroy(obj);
+        obj.transform.SetParent(null);
+        
+        if (obj.TryGetComponent(out Pirate pirate))
+        {
+            pirate.GetForceAfterDeath(GetDirectionForce(index));
+        }
+        Destroy(obj,10f);
+    }
+
+    private Vector3 GetDirectionForce(int index)
+    {
+        Vector3 directionForce = Vector3.zero;
+        directionForce += transform.up;
+        
+        //Вычисляем позицию пирата по линии
+        int indexX = index % _countInRow;
+        //Проверяем в какой стороне сидит пират
+        if (indexX >= _countInRow / 2)
+            directionForce += transform.right * _forceToSide;
+        else
+            directionForce -= transform.right * _forceToSide;
+
+        return directionForce;
     }
     
     void Update()

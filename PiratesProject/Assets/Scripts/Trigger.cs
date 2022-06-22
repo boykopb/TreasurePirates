@@ -14,8 +14,6 @@ public class Trigger : MonoBehaviour
     [SerializeField] private TypeOfTrigger _typeTrigger;
     private void OnTriggerEnter(Collider other)
     {
-        Debug.Log("face");
-        
         if (other.TryGetComponent(out Counter counter))
         {
             switch (_typeTrigger)
