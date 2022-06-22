@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class Boat : MonoBehaviour
 {
-    [SerializeField] private Counter _counter;
+    [SerializeField] private PirateCounter pirateCounter;
     [SerializeField] private GameObject _prefabPirate;
     [SerializeField] private int _countInRow = 2;
     [SerializeField] private float _deltaZ = 5f;
@@ -98,6 +98,6 @@ public class Boat : MonoBehaviour
     
     void Update()
     {
-        FillPirates(_counter.CountPirates);
+        FillPirates(pirateCounter.Count);
     }
 }

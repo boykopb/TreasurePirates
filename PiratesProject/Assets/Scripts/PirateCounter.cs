@@ -3,21 +3,21 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Counter : MonoBehaviour
+public class PirateCounter : MonoBehaviour
 {
-    [field: SerializeField]public int CountPirates { private set; get; }
+    [field: SerializeField]public int Count { private set; get; }
     
     public void ChangeCountPirate(int value)
     {
-        CountPirates += value;
-        if (CountPirates <= 0)
+        Count += value;
+        if (Count <= 0)
         {
-            CountPirates = 0;
+            Count = 0;
             EventManager.Current.GameOver();
             return;
         }
         
-        EventManager.Current.ChangedValue(CountPirates);
+        EventManager.Current.ChangedValue(Count);
         //Debug.Log("CountPirate = " + CountPirates);
     }
 }

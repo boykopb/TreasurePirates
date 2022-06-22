@@ -14,7 +14,7 @@ public class Trigger : MonoBehaviour
     [SerializeField] private TypeOfTrigger _typeTrigger;
     private void OnTriggerEnter(Collider other)
     {
-        if (other.TryGetComponent(out Counter counter))
+        if (other.TryGetComponent(out PirateCounter counter))
         {
             switch (_typeTrigger)
             {
@@ -29,9 +29,9 @@ public class Trigger : MonoBehaviour
         }
     }
 
-    private void ChangeValue(Counter counter)
+    private void ChangeValue(PirateCounter pirateCounter)
     {
-        counter.ChangeCountPirate(_countPirate);
+        pirateCounter.ChangeCountPirate(_countPirate);
     }
 
     private void Destroy()
