@@ -20,7 +20,7 @@ public class GameManager : MonoBehaviour
     }
   }
 
-  private void TakeDamageEffect()
+  public void TakeDamageEffect()
   {
     _damagePlayer.PlayFeedbacks();
   }
