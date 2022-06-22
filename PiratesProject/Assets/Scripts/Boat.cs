@@ -11,7 +11,6 @@ public class Boat : MonoBehaviour
     [SerializeField] private float _deltaX = 5f;
     [SerializeField] private Transform _startSpawnPos;
     [SerializeField] private float _forceToSide = 10f;
-    [Range(0, 15)][SerializeField] private int _testCount = 5;
 
     private List<GameObject> _pirates = new List<GameObject>();
     void Start()
@@ -75,7 +74,8 @@ public class Boat : MonoBehaviour
         
         if (obj.TryGetComponent(out Pirate pirate))
         {
-            pirate.GetForceAfterDeath(GetDirectionForce(index));
+            pirate.DirectionForce = GetDirectionForce(index);
+            pirate.GetForceAfterDeath();
         }
         Destroy(obj,10f);
     }
