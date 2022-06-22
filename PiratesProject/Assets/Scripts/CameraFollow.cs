@@ -23,4 +23,11 @@ public class CameraFollow : MonoBehaviour
       transform.position = nextPosition;
     }
   }
+
+
+
+  public void SetTarget(Transform newTarget)
+  {
+    _target = newTarget;
+  }
 }

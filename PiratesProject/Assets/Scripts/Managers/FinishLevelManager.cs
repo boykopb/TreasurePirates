@@ -1,63 +1,78 @@
 using System;
 using System.Collections;
 using Managers;
+using MoreMountains.Feedbacks;
 using UnityEngine;
 
 public class FinishLevelManager : MonoBehaviour
 {
   [SerializeField] private FinishLineTrigger _finishLine;
 
-  [Header("Boat params")] [SerializeField]
-  private Transform _boatTransform;
-
+  [Header("Boat params")] 
+  [SerializeField] private Transform _boatTransform;
   [SerializeField] private Transform _stopBoatPoint;
   [SerializeField] private float _lerpRateToStopPosition = 0.5f;
 
-  [Header("On finish effects")] [SerializeField]
-  private ParticleSystem[] _onFinishConfettiVFX;
-
+  [Header("On finish effects params")] 
+  [SerializeField] private ParticleSystem[] _onFinishConfettiVFX;
   [SerializeField] private AudioClip _onFinishConfettiSFX;
   [SerializeField] private float _fxCooldownPeriod = 0.1f;
+  [SerializeField] private MMF_Player _onStopCameraLightShake;
+  [SerializeField] private float _waitTimeBeforeFinishLevel = 0.5f;
+  
 
 
   private Movement _boatMovement;
   private bool _isFinishLineReached;
   private bool _isBoatMovedToStopPosition;
 
+  public event Action OnLevelFinishedEvent;
+
   private void Start()
   {
-    _finishLine.OnFinishReachedEvent += OnFinishLineReach;
+    _finishLine.OnFinishLineReachedEvent += OnFinishLineLineReach;
 
     _boatMovement = _boatTransform.GetComponent<Movement>();
   }
 
   private void Update()
   {
-    MovePlayerBoatToStopPoint();
-  }
-
-  private void MovePlayerBoatToStopPoint()
-  {
     if (!_isFinishLineReached || _isBoatMovedToStopPosition)
       return;
-
-    _boatTransform.position = Vector3.Lerp(_boatTransform.position, _stopBoatPoint.position, Time.deltaTime * _lerpRateToStopPosition);
-    _boatTransform.rotation = Quaternion.Lerp(_boatTransform.rotation, _stopBoatPoint.rotation, Time.deltaTime * _lerpRateToStopPosition);
-
-
-    if (Vector3.Distance(_boatTransform.position, _stopBoatPoint.position) <= 0.5f)
-    {
-      _isBoatMovedToStopPosition = true;
-      Debug.Log("_isBoatMovedToStopPosition = true");
-    }
+    LerpBoatToStopPoint();
+    
+    if (IsBoatReachedStopPoint()) 
+      DoActionsOnBoatStop();
   }
 
   private void OnDestroy()
   {
-    _finishLine.OnFinishReachedEvent -= OnFinishLineReach;
+    _finishLine.OnFinishLineReachedEvent -= OnFinishLineLineReach;
   }
 
-  private void OnFinishLineReach()
+  private void LerpBoatToStopPoint()
+  {
+    _boatTransform.position = Vector3.Lerp(_boatTransform.position, _stopBoatPoint.position, Time.deltaTime * _lerpRateToStopPosition);
+    _boatTransform.rotation = Quaternion.Lerp(_boatTransform.rotation, _stopBoatPoint.rotation, Time.deltaTime * _lerpRateToStopPosition);
+  }
+
+  private void DoActionsOnBoatStop()
+  {
+    _isBoatMovedToStopPosition = true;
+    _onStopCameraLightShake.PlayFeedbacks();
+    StartCoroutine(InvokeFinishLevel());
+  }
+
+  private IEnumerator InvokeFinishLevel()
+  {
+    yield return new WaitForSeconds(_waitTimeBeforeFinishLevel);
+    OnLevelFinishedEvent?.Invoke();
+  }
+
+  private bool IsBoatReachedStopPoint() => 
+    Vector3.Distance(_boatTransform.position, _stopBoatPoint.position) <= 0.5f;
+
+  private void OnFinishLineLineReach()
   {
     _isFinishLineReached = true;
     DisableBoatControl();
