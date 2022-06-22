@@ -1,5 +1,64 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
+--- !u!1 &484233721
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 484233722}
+  - component: {fileID: 484233724}
+  - component: {fileID: 484233723}
+  m_Layer: 0
+  m_Name: TriggerBoat
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &484233722
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 484233721}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 3.13}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 183341362988168544}
+  m_RootOrder: 3
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &484233724
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 484233721}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 306fede8acccd4ca7a027ba48ae7311b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  <Count>k__BackingField: 5
+--- !u!65 &484233723
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 484233721}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 2.5, y: 2.5, z: 0.22}
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &183341362988168559
 GameObject:
   m_ObjectHideFlags: 0
@@ -9,7 +68,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 183341362988168544}
-  - component: {fileID: 183341362988168546}
   - component: {fileID: 183341362988168545}
   - component: {fileID: 183341362988168547}
   - component: {fileID: 183341362988168548}
@@ -35,22 +93,10 @@ Transform:
   - {fileID: 183341364574225543}
   - {fileID: 183341363544058813}
   - {fileID: 183341363709551263}
+  - {fileID: 484233722}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &183341362988168546
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 183341362988168559}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 306fede8acccd4ca7a027ba48ae7311b, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  <CountPirates>k__BackingField: 5
 --- !u!65 &183341362988168545
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -62,7 +108,7 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 1.5, y: 0.4, z: 6.5}
+  m_Size: {x: 1.5, y: 1, z: 6.5}
   m_Center: {x: 0, y: 0, z: 0.87}
 --- !u!54 &183341362988168547
 Rigidbody:
@@ -92,7 +138,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c6837b2f5a5cc42458c4bebc45877486, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _counter: {fileID: 183341362988168546}
+  pirateCounter: {fileID: 484233724}
   _prefabPirate: {fileID: 4923197656084891360, guid: 68c8ea5f0a482436fa13ec1121e99540,
     type: 3}
   _countInRow: 2

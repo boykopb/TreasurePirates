@@ -5,12 +5,11 @@ using UnityEngine;
 
 public class Turrel : MonoBehaviour
 {
-    [SerializeField] private float _fireRate = 1f;
     [SerializeField] private float _timeReload = 1f;
     [SerializeField] private GameObject _bulletPrefab;
     [SerializeField] private Transform _spawnPosition;
     [SerializeField] private float _timeToDestroy = 10f;
-    [SerializeField] private float _countPirate = 1f;
+    [SerializeField] private int _countDamagePirate = 1;
     private Boat _boat;
     
     void Start()
@@ -18,12 +17,7 @@ public class Turrel : MonoBehaviour
         StartCoroutine(Attack());
         
     }
-
-    void Update()
-    {
-        
-    }
-
+    
     IEnumerator Attack()
     {
         while (true)
@@ -35,7 +29,11 @@ public class Turrel : MonoBehaviour
 
     private void SpawnBullet()
     {
-        GameObject bullet = Instantiate(_bulletPrefab, _spawnPosition.position, transform.rotation);
-        Destroy(bullet, _timeToDestroy);
+        GameObject bulletObj = Instantiate(_bulletPrefab, _spawnPosition.position, transform.rotation);
+        if (bulletObj.TryGetComponent(out Bullet bullet))
+        {
+            bullet.SetPirateDamage(-_countDamagePirate);
+        }
+        Destroy(bulletObj, _timeToDestroy);
     }
 }
