@@ -13,7 +13,7 @@ public class Movement : MonoBehaviour
 
   private void Update()
   {
-    ClampedMovementBehavour();
+    ClampedMovementBehaviour();
 
     if (Input.GetMouseButtonDown(0))
       _oldPosition = Input.mousePosition;
@@ -23,7 +23,7 @@ public class Movement : MonoBehaviour
       RotatePlayer();
   }
 
-  private void ClampedMovementBehavour()
+  private void ClampedMovementBehaviour()
   {
     var movementOffset = transform.forward * (_movementSpeed * Time.deltaTime);
     var nextPosition = transform.position + movementOffset;
