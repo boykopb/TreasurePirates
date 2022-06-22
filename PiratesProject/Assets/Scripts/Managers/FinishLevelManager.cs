@@ -11,16 +11,15 @@ public class FinishLevelManager : MonoBehaviour
   [Header("Boat params")] 
   [SerializeField] private Transform _boatTransform;
   [SerializeField] private Transform _stopBoatPoint;
-  [SerializeField] private float _lerpRateToStopPosition = 0.5f;
+  [SerializeField] private float _lerpRateToStopPosition = 0.8f;
 
   [Header("On finish effects params")] 
   [SerializeField] private ParticleSystem[] _onFinishConfettiVFX;
   [SerializeField] private AudioClip _onFinishConfettiSFX;
-  [SerializeField] private float _fxCooldownPeriod = 0.1f;
+  [SerializeField] private float _fxCooldownPeriod = 0.2f;
   [SerializeField] private MMF_Player _onStopCameraLightShake;
-  [SerializeField] private float _waitTimeBeforeFinishLevel = 0.5f;
+  [SerializeField] private float _waitTimeBeforeFinishLevel = 0.8f;
   
-
 
   private Movement _boatMovement;
   private bool _isFinishLineReached;

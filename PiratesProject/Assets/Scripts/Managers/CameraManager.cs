@@ -25,6 +25,7 @@ public class CameraManager : MonoBehaviour
   private void OnLevelFinish()
   {
     _isLevelFinished = true;
+    SetNextTarget();
   }
 
 
