@@ -17,4 +17,32 @@ public class ShipChanger : MonoBehaviour
       _ships[i].SetActive(i == _currentShip);
     }
   }
+  
+  
+  public void UpgradeShip()
+  {
+    if (_currentShip == _ships.Count - 1) 
+      return;
+    
+    _currentShip++;
+    
+    for (var i = 0; i < _ships.Count; i++)
+    {
+      _ships[i].SetActive(i == _currentShip);
+    }
+  }
+  
+  
+  public void DowngradeShip()
+  {
+    if (_currentShip == 0) 
+      return;
+    
+    _currentShip--;
+    
+    for (var i = 0; i < _ships.Count; i++)
+    {
+      _ships[i].SetActive(i == _currentShip);
+    }
+  }
 }
