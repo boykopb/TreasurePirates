@@ -17,7 +17,6 @@ namespace Managers
       GetAndInitCoinsOnScene();
     }
 
-
     public void CollectCoin()
     {
       CoinsCollectedCount++;

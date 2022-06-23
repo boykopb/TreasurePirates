@@ -31,8 +31,8 @@ namespace Items
       _isTaken = true;
       _coinManager.CollectCoin();
 
-      var pickUpVFX = Instantiate(_onPickUpVFX, otherTransform);
-      pickUpVFX.transform.localPosition = _vfxPositionOffset;
+      var pickUpVFX = Instantiate(_onPickUpVFX);
+      pickUpVFX.transform.position = otherTransform.position + _vfxPositionOffset;
       
       SoundManager.Instance.PlaySFX(_onPickUpSFX);
       Destroy(gameObject);
