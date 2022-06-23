@@ -5,7 +5,7 @@ namespace Managers
 {
     public class EventManager : MonoBehaviour
     {
-        public Action<int> OnChangedValue;
+        public Action<int> OnChangedCurrentValue;
         public Action<int> OnChangedCountPirate;
         public Action OnGameOver;
 
@@ -24,7 +24,7 @@ namespace Managers
 
         public void ChangedValue(int currentValue)
         {
-            OnChangedValue?.Invoke(currentValue);
+            OnChangedCurrentValue?.Invoke(currentValue);
         }
 
         public void ChangedCountPirate(int value)

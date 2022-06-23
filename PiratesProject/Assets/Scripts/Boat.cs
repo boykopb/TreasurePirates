@@ -16,7 +16,7 @@ public class Boat : MonoBehaviour
     private List<GameObject> _pirates = new List<GameObject>();
     void Start()
     {
-        EventManager.Current.OnChangedValue += OnChangedValue;
+        EventManager.Current.OnChangedCurrentValue += OnChangedValue;
     }
     
         
