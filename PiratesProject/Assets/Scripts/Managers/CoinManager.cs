@@ -31,5 +31,12 @@ namespace Managers
       for (var i = 0; i < _coinItemsOnScene.Length; i++) 
         _coinItemsOnScene[i].Construct(this);
     }
+
+
+    public void MultiplyCoins(int multiplier)
+    {
+      CoinsCollectedCount *= multiplier;
+      OnCoinCollect?.Invoke();
+    }
   }
 }

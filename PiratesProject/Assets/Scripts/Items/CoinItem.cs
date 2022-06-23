@@ -7,6 +7,7 @@ namespace Items
   {
     [SerializeField] private protected GameObject _onPickUpVFX;
     [SerializeField] private protected AudioClip _onPickUpSFX;
+    [SerializeField] private protected Vector3 _vfxPositionOffset = new Vector3(0f, 1f, -1f);
 
     private CoinManager _coinManager;
     private bool _isTaken;
@@ -30,7 +31,9 @@ namespace Items
       _isTaken = true;
       _coinManager.CollectCoin();
 
-      Instantiate(_onPickUpVFX, otherTransform);
+      var pickUpVFX = Instantiate(_onPickUpVFX, otherTransform);
+      pickUpVFX.transform.localPosition = _vfxPositionOffset;
+      
       SoundManager.Instance.PlaySFX(_onPickUpSFX);
       Destroy(gameObject);
     }
