@@ -1,6 +1,7 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using Managers;
 using UnityEngine;
 
 enum TypeOfTrigger
@@ -14,7 +15,7 @@ public class Trigger : MonoBehaviour
     [SerializeField] private TypeOfTrigger _typeTrigger;
     private void OnTriggerEnter(Collider other)
     {
-        if (other.TryGetComponent(out PirateCounter counter))
+        if (other.TryGetComponent(out BoatTrigger boatTrigger))
         {
             switch (_typeTrigger)
             {
@@ -24,14 +25,14 @@ public class Trigger : MonoBehaviour
                     _countPirate *= -1;
                     break;
             }
-            ChangeValue(counter);
+            ChangeValue();
             Destroy();
         }
     }
 
-    private void ChangeValue(PirateCounter pirateCounter)
+    private void ChangeValue()
     {
-        pirateCounter.ChangeCountPirate(_countPirate);
+        EventManager.Current.ChangedCountPirate(_countPirate);
     }
 
     private void Destroy()

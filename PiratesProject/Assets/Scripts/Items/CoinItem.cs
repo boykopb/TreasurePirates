@@ -19,7 +19,7 @@ namespace Items
 
     private void OnTriggerEnter(Collider other)
     {
-      if (!other.attachedRigidbody.TryGetComponent<Movement>(out _) || _isTaken)
+      if (!other.TryGetComponent<BoatTrigger>(out _) || _isTaken)
         return;
 
       PickUp(other.transform);

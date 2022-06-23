@@ -7,8 +7,13 @@ using UnityEngine;
 public class PirateCounter : MonoBehaviour
 {
     [field: SerializeField]public int Count { private set; get; }
-    
-    public void ChangeCountPirate(int value)
+
+    private void Start()
+    {
+        EventManager.Current.OnChangedCountPirate += OnChangedCountPirate;
+    }
+
+    private void OnChangedCountPirate(int value)
     {
         Count += value;
         if (Count <= 0)
@@ -19,6 +24,5 @@ public class PirateCounter : MonoBehaviour
         }
         
         EventManager.Current.ChangedValue(Count);
-        //Debug.Log("CountPirate = " + CountPirates);
     }
 }

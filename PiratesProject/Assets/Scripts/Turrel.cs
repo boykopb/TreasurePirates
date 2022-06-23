@@ -6,6 +6,7 @@ using UnityEngine;
 public class Turrel : MonoBehaviour
 {
     [SerializeField] private float _timeReload = 1f;
+    [SerializeField] private float _timeToSpawnBullets = 2f;
     [SerializeField] private GameObject _bulletPrefab;
     [SerializeField] private Transform _spawnPosition;
     [SerializeField] private float _timeToDestroy = 10f;
@@ -21,6 +22,7 @@ public class Turrel : MonoBehaviour
     
     IEnumerator Attack()
     {
+        yield return new WaitForSeconds(_timeToSpawnBullets);
         while (true)
         {
             SpawnBullet();

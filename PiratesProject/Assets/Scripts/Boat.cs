@@ -18,6 +18,12 @@ public class Boat : MonoBehaviour
     {
         EventManager.Current.OnChangedValue += OnChangedValue;
     }
+    
+        
+    void Update()
+    {
+        FillPirates(pirateCounter.Count);
+    }
 
     private void OnChangedValue(int newCountPirate)
     {
@@ -63,6 +69,8 @@ public class Boat : MonoBehaviour
     private void AddPirate(Vector3 spawnPos)
     {
         GameObject pirate = Instantiate(_prefabPirate, transform);
+        if (_prefabPirate.TryGetComponent(out Rigidbody rigidbody))
+            rigidbody.isKinematic = true;
         pirate.transform.localPosition = spawnPos;
         _pirates.Add(pirate);
     }
@@ -75,9 +83,12 @@ public class Boat : MonoBehaviour
         
         if (obj.TryGetComponent(out Pirate pirate))
         {
+            if (pirate.TryGetComponent(out Rigidbody rigidbody))
+                rigidbody.isKinematic = false;
             pirate.DirectionForce = GetDirectionForce(index);
             pirate.GetForceAfterDeath();
         }
+        
         Destroy(obj,10f);
     }
 
@@ -96,9 +107,5 @@ public class Boat : MonoBehaviour
 
         return directionForce;
     }
-    
-    void Update()
-    {
-        FillPirates(pirateCounter.Count);
-    }
+
 }

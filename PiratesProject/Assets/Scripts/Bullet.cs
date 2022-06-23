@@ -1,6 +1,7 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using Managers;
 using UnityEngine;
 
 public class Bullet : MonoBehaviour
@@ -10,11 +11,12 @@ public class Bullet : MonoBehaviour
     
     private int _countDamagePirate = 0;
     
+
     private void OnTriggerEnter(Collider other)
     {
-        if (other.TryGetComponent(out PirateCounter counter))
+        if (other.TryGetComponent(out BoatTrigger triggerBoat))
         {
-            counter.ChangeCountPirate(_countDamagePirate);
+            EventManager.Current.ChangedCountPirate(_countDamagePirate);
             Destroy();
         }
     }
