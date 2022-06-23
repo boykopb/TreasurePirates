@@ -10,6 +10,7 @@ public class Turrel : MonoBehaviour
     [SerializeField] private Transform _spawnPosition;
     [SerializeField] private float _timeToDestroy = 10f;
     [SerializeField] private int _countDamagePirate = 1;
+    [SerializeField] private ParticleSystem _fireEffect;
     private Boat _boat;
     
     void Start()
@@ -34,6 +35,7 @@ public class Turrel : MonoBehaviour
         {
             bullet.SetPirateDamage(-_countDamagePirate);
         }
+        _fireEffect.Play();
         Destroy(bulletObj, _timeToDestroy);
     }
 }

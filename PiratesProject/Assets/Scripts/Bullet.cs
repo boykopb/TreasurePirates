@@ -6,6 +6,8 @@ using UnityEngine;
 public class Bullet : MonoBehaviour
 {
     [SerializeField] private float _speed;
+    [SerializeField] private GameObject _deathEffect;
+    
     private int _countDamagePirate = 0;
     
     private void OnTriggerEnter(Collider other)
@@ -19,7 +21,13 @@ public class Bullet : MonoBehaviour
 
     private void Destroy()
     {
+        ActivateDeathEffects();
         Destroy(gameObject);
+    }
+
+    private void ActivateDeathEffects()
+    {
+        Instantiate(_deathEffect,transform.position, Quaternion.identity);
     }
 
     void Update()
