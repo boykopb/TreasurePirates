@@ -2,26 +2,29 @@
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-public class GameManager : MonoBehaviour
+namespace Managers
 {
-  [SerializeField] private MMF_Player _damagePlayer;
+  public class GameManager : MonoBehaviour
+  {
+    [SerializeField] private MMF_Player _damagePlayer;
   
-  public void RestartLevel()
-  {
-    SceneManager.LoadScene(SceneManager.GetActiveScene().name);
-  }
-
-  private void Update()
-  {
-    //for testing, delete at the end
-    if (Input.GetMouseButtonDown(1))
+    public void RestartLevel()
     {
-      TakeDamageEffect();
+      SceneManager.LoadScene(SceneManager.GetActiveScene().name);
     }
-  }
 
-  public void TakeDamageEffect()
-  {
-    _damagePlayer.PlayFeedbacks();
+    private void Update()
+    {
+      //for testing, delete at the end
+      if (Input.GetMouseButtonDown(1))
+      {
+        TakeDamageEffect();
+      }
+    }
+
+    public void TakeDamageEffect()
+    {
+      _damagePlayer.PlayFeedbacks();
+    }
   }
 }

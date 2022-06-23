@@ -1,28 +1,29 @@
 using System;
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
-public class EventManager : MonoBehaviour
+namespace Managers
 {
-    public Action<int> OnChangedValue;
-    public Action OnGameOver;
-
-    public static EventManager Current;
-
-    private void Awake()
+    public class EventManager : MonoBehaviour
     {
-        Current = this;
-    }
+        public Action<int> OnChangedValue;
+        public Action OnGameOver;
 
-    public void GameOver()
-    {
-        Debug.Log("GameOver");
-        OnGameOver?.Invoke();
-    }
+        public static EventManager Current;
 
-    public void ChangedValue(int currentValue)
-    {
-        OnChangedValue?.Invoke(currentValue);
+        private void Awake()
+        {
+            Current = this;
+        }
+
+        public void GameOver()
+        {
+            Debug.Log("GameOver");
+            OnGameOver?.Invoke();
+        }
+
+        public void ChangedValue(int currentValue)
+        {
+            OnChangedValue?.Invoke(currentValue);
+        }
     }
 }
