@@ -436,6 +436,7 @@ GameObject:
   - component: {fileID: 158741615}
   - component: {fileID: 158741617}
   - component: {fileID: 158741616}
+  - component: {fileID: 158741618}
   m_Layer: 0
   m_Name: TriggerBoat
   m_TagString: Untagged
@@ -483,6 +484,19 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 0.6, y: 2.5, z: 0.22}
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!65 &158741618
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 158741614}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.7, y: 1.43, z: 3.17}
+  m_Center: {x: 0, y: -0.06, z: -1.87}
 --- !u!1 &180397545
 GameObject:
   m_ObjectHideFlags: 0
@@ -657,7 +671,7 @@ PrefabInstance:
     - target: {fileID: 1468805236043908802, guid: 8d1be0d4bf6e344db92894cac31fead5,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0.7
+      value: 0.69
       objectReference: {fileID: 0}
     - target: {fileID: 1468805236043908802, guid: 8d1be0d4bf6e344db92894cac31fead5,
         type: 3}
@@ -814,7 +828,7 @@ PrefabInstance:
     - target: {fileID: 183341362988168559, guid: 7e0fbd77b8b0c4554a14718988afd28d,
         type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 183341363709551263, guid: 7e0fbd77b8b0c4554a14718988afd28d,
         type: 3}
@@ -1001,6 +1015,19 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
+--- !u!65 &336566620
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 336566616}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.7, y: 1.54, z: 2.37}
+  m_Center: {x: 0, y: 0.73, z: 0.29}
 --- !u!4 &340523170 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 447994, guid: 573aff33fc7399f4495992dfcd86f602,
@@ -2124,6 +2151,7 @@ GameObject:
   - component: {fileID: 641626687}
   - component: {fileID: 641626689}
   - component: {fileID: 641626688}
+  - component: {fileID: 641626690}
   m_Layer: 0
   m_Name: TriggerBoat
   m_TagString: Untagged
@@ -2171,6 +2199,19 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 0.6, y: 2.5, z: 0.22}
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!65 &641626690
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 641626686}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.7, y: 1, z: 2}
+  m_Center: {x: 0, y: -0.15, z: -1.3}
 --- !u!1001 &667380031
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -3497,7 +3538,7 @@ MonoBehaviour:
     ModeOverride: 0
     LensShift: {x: 0, y: 0}
     GateFit: 2
-    m_SensorSize: {x: 0.5634675, y: 1}
+    m_SensorSize: {x: 0.56213015, y: 1}
   m_Transitions:
     m_BlendHint: 0
     m_InheritPosition: 0
@@ -3732,7 +3773,7 @@ PrefabInstance:
     - target: {fileID: 1468805236043908802, guid: 8d1be0d4bf6e344db92894cac31fead5,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0.7
+      value: 0.69
       objectReference: {fileID: 0}
     - target: {fileID: 1468805236043908802, guid: 8d1be0d4bf6e344db92894cac31fead5,
         type: 3}
@@ -6820,11 +6861,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 1468805236043908801, guid: 8d1be0d4bf6e344db92894cac31fead5,
-        type: 3}
-      propertyPath: _timeReload
-      value: 4
-      objectReference: {fileID: 0}
     - target: {fileID: 1468805236043908802, guid: 8d1be0d4bf6e344db92894cac31fead5,
         type: 3}
       propertyPath: m_RootOrder
@@ -6838,7 +6874,7 @@ PrefabInstance:
     - target: {fileID: 1468805236043908802, guid: 8d1be0d4bf6e344db92894cac31fead5,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0.84
+      value: 0.69
       objectReference: {fileID: 0}
     - target: {fileID: 1468805236043908802, guid: 8d1be0d4bf6e344db92894cac31fead5,
         type: 3}
@@ -9880,6 +9916,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 208eabd5b83464c22bf0b332993644c8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!65 &2070240426
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2070240422}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.7, y: 0.98, z: 4.8}
+  m_Center: {x: 0, y: -0.57, z: -2.16}
 --- !u!1001 &2095673119
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -10388,7 +10437,7 @@ PrefabInstance:
     - target: {fileID: 5378550736253323414, guid: a67690fc6ed5d3e48a57572cee0d9c1a,
         type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 6851292178548840828, guid: a67690fc6ed5d3e48a57572cee0d9c1a,
         type: 3}

@@ -47,7 +47,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 972b790898b5d458a91967734f210716, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _timeReload: 1
+  _timeReload: 4
+  _timeToSpawnBullets: 2
   _bulletPrefab: {fileID: 3729223584799471047, guid: 40a08b532c5524fc7aa6a06a9df99674,
     type: 3}
   _spawnPosition: {fileID: 1468805238098357012}
@@ -496,6 +497,22 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 476560, guid: d786954ea58ae6f45b3de29c31ec67f9, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 19820740, guid: d786954ea58ae6f45b3de29c31ec67f9, type: 3}
+      propertyPath: playOnAwake
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 19870716, guid: d786954ea58ae6f45b3de29c31ec67f9, type: 3}
+      propertyPath: playOnAwake
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 19883498, guid: d786954ea58ae6f45b3de29c31ec67f9, type: 3}
+      propertyPath: playOnAwake
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 19891528, guid: d786954ea58ae6f45b3de29c31ec67f9, type: 3}
+      propertyPath: playOnAwake
       value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
