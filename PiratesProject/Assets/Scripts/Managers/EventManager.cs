@@ -7,7 +7,6 @@ namespace Managers
   {
     public Action<int> OnChangedCurrentValue;
     public Action<int> OnChangedCountPirate;
-    public Action OnShipChanged;
     public Action OnGameOver;
 
     public static EventManager Current;
@@ -19,7 +18,6 @@ namespace Managers
 
     public void GameOver()
     {
-      Debug.Log("GameOver");
       OnGameOver?.Invoke();
     }
 
@@ -33,11 +31,6 @@ namespace Managers
       if (value < 0) ScreenShaker.Instance.DoStrongShake();
 
       OnChangedCountPirate?.Invoke(value);
-    }
-
-    public void ShipChanged()
-    {
-      OnShipChanged?.Invoke();
     }
   }
 }

@@ -54,9 +54,7 @@ namespace Managers
         EventManager.Current.ChangedCurrentValue(_countPirateLevel[^1]);
         return;
       }
-
-      EventManager.Current.ShipChanged();
-
+      
       _currentShip++;
       OnUpgradeShipEvent?.Invoke();
 
@@ -71,7 +69,7 @@ namespace Managers
     {
       if (_currentShip == 0)
         return;
-      EventManager.Current.ShipChanged();
+
       _currentShip--;
       OnDowngradeShipEvent?.Invoke();
 
