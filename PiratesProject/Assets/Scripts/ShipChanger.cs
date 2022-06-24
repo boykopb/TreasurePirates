@@ -6,9 +6,10 @@ using UnityEngine;
 public class ShipChanger : MonoBehaviour
 {
   [SerializeField] private List<GameObject> _ships;
-  [SerializeField] private int[] _countPirateLevel = new []{0,2,4,8};
-
+  [SerializeField] private PirateCounter _pirateCounter;
   [SerializeField] private int _minBorder = 0;
+  
+  private int[] _countPirateLevel;
   private int _currentShip = 0;
   private int _currentCount;
   private int _nextLevelBorder;
@@ -16,8 +17,8 @@ public class ShipChanger : MonoBehaviour
 
   private void Start()
   {
+    _countPirateLevel = _pirateCounter.CountPirateLevel;
     SetBorder(_currentShip);
-    
   }
 
   public void OnChangedCurrentValue(int value)
@@ -28,7 +29,6 @@ public class ShipChanger : MonoBehaviour
       UpgradeShip();
 
     SetBorder(_currentShip);
-    
   }
 
   public void ChangeShip()
@@ -44,8 +44,12 @@ public class ShipChanger : MonoBehaviour
 
   private void UpgradeShip()
   {
-    if (_currentShip == _ships.Count - 1) 
+    if (_currentShip == _ships.Count - 1)
+    {
+      EventManager.Current.ChangedCurrentValue(_countPirateLevel[^1]);
       return;
+    }
+      
     Debug.Log("UpgradeShip");
     EventManager.Current.ShipChanged();
     
