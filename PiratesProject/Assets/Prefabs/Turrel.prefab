@@ -10,6 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1468805236043908802}
   - component: {fileID: 1468805236043908801}
+  - component: {fileID: 1556800273}
   m_Layer: 0
   m_Name: Turrel
   m_TagString: Untagged
@@ -47,7 +48,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 972b790898b5d458a91967734f210716, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _timeReload: 4
+  _timeReload: 3
   _timeToSpawnBullets: 2
   _bulletPrefab: {fileID: 3729223584799471047, guid: 40a08b532c5524fc7aa6a06a9df99674,
     type: 3}
@@ -55,6 +56,20 @@ MonoBehaviour:
   _timeToDestroy: 10
   _countDamagePirate: 1
   _fireEffect: {fileID: 35380871}
+  _isFire: 0
+--- !u!114 &1556800273
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1468805236043908803}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: abfac43ce9645404ea6b3ca5d890924e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _activateDistance: 50
 --- !u!1 &1468805236420364327
 GameObject:
   m_ObjectHideFlags: 0

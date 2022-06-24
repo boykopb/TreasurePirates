@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using Unity.Collections.LowLevel.Unsafe;
@@ -13,19 +14,27 @@ public class Turrel : MonoBehaviour
     [SerializeField] private int _countDamagePirate = 1;
     [SerializeField] private ParticleSystem _fireEffect;
     private Boat _boat;
-    
-    void Start()
+    [SerializeField] private bool _isFire = false;
+    private float timer = 0f;
+
+    private void Update()
     {
-        StartCoroutine(Attack());
-        
+        timer += Time.deltaTime;
+        if (timer >= _timeReload && gameObject.activeSelf)
+        {
+            timer = 0;
+            SpawnBullet();
+        }
     }
-    
+
     IEnumerator Attack()
     {
-        yield return new WaitForSeconds(_timeToSpawnBullets);
+        //yield return new WaitForSeconds(_timeToSpawnBullets);
         while (true)
         {
-            SpawnBullet();
+            _isFire = true;
+            Debug.Log("Attack");
+            
             yield return new WaitForSeconds(_timeReload);
         }
     }

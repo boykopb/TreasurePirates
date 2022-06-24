@@ -17,10 +17,10 @@ public class ShipChanger : MonoBehaviour
   private void Start()
   {
     SetBorder(_currentShip);
-    EventManager.Current.OnChangedCurrentValue += OnChangedCurrentValue;
+    
   }
 
-  private void OnChangedCurrentValue(int value)
+  public void OnChangedCurrentValue(int value)
   {
     if (value <= _prevLevelBorder)
       DowngradeShip();
@@ -46,12 +46,15 @@ public class ShipChanger : MonoBehaviour
   {
     if (_currentShip == _ships.Count - 1) 
       return;
+    Debug.Log("UpgradeShip");
+    EventManager.Current.ShipChanged();
     
     _currentShip++;
     
     for (var i = 0; i < _ships.Count; i++)
     {
       _ships[i].SetActive(i == _currentShip);
+      //Debug.Log(i == _currentShip);
     }
   }
 
@@ -60,7 +63,8 @@ public class ShipChanger : MonoBehaviour
   {
     if (_currentShip == 0) 
       return;
-    
+    Debug.Log("DowngradeShip");
+    EventManager.Current.ShipChanged();
     _currentShip--;
     
     for (var i = 0; i < _ships.Count; i++)

@@ -7,6 +7,7 @@ namespace Managers
     {
         public Action<int> OnChangedCurrentValue;
         public Action<int> OnChangedCountPirate;
+        public Action OnShipChanged;
         public Action OnGameOver;
 
         public static EventManager Current;
@@ -22,7 +23,7 @@ namespace Managers
             OnGameOver?.Invoke();
         }
 
-        public void ChangedValue(int currentValue)
+        public void ChangedCurrentValue(int currentValue)
         {
             OnChangedCurrentValue?.Invoke(currentValue);
         }
@@ -30,6 +31,11 @@ namespace Managers
         public void ChangedCountPirate(int value)
         {
             OnChangedCountPirate?.Invoke(value);
+        }
+
+        public void ShipChanged()
+        {
+            OnShipChanged?.Invoke();
         }
     }
 }

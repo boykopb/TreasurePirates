@@ -20,9 +20,9 @@ public class PirateCounter : MonoBehaviour
         {
             Count = 0;
             EventManager.Current.GameOver();
-            return;
+            //return;
         }
         
-        EventManager.Current.ChangedValue(Count);
+        EventManager.Current.ChangedCurrentValue(Count);
     }
 }

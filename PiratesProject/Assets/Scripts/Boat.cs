@@ -12,28 +12,22 @@ public class Boat : MonoBehaviour
     [SerializeField] private float _deltaX = 5f;
     [SerializeField] private Transform _startSpawnPos;
     [SerializeField] private float _forceToSide = 10f;
+    [SerializeField] private Transform _parentForPirate;
+    [SerializeField] private ShipChanger _shipChanger;
 
-    private List<GameObject> _pirates = new List<GameObject>();
+    [SerializeField] private List<GameObject> _pirates = new List<GameObject>();
     void Start()
     {
-        EventManager.Current.OnChangedCurrentValue += OnChangedValue;
-    }
-    
-        
-    void Update()
-    {
+        EventManager.Current.OnChangedCurrentValue += OnChangedCurrentValue;
+        EventManager.Current.OnShipChanged += OnShipChanged;
         FillPirates(pirateCounter.Count);
-    }
-
-    private void OnChangedValue(int newCountPirate)
-    {
-        //FillPirates(newCountPirate);
     }
 
     private void FillPirates(int newCountPirate)
     {
         if (_pirates.Count < newCountPirate)
         {
+            Debug.Log("FillAddPirates");
             for (int i = _pirates.Count; i < newCountPirate; i++)
             {
                 Vector3 spawnPos = GetSpawnPos(i);
@@ -46,6 +40,7 @@ public class Boat : MonoBehaviour
             {
                 RemovePirate(i);
             }
+            Debug.Log("FillRemovePirates");
         }
         
     }
@@ -68,13 +63,25 @@ public class Boat : MonoBehaviour
 
     private void AddPirate(Vector3 spawnPos)
     {
-        GameObject pirate = Instantiate(_prefabPirate, transform);
+        GameObject pirate = Instantiate(_prefabPirate, _parentForPirate);
         if (_prefabPirate.TryGetComponent(out Rigidbody rigidbody))
             rigidbody.isKinematic = true;
         pirate.transform.localPosition = spawnPos;
         _pirates.Add(pirate);
     }
-
+    
+    private void RemoveAllPirate()
+    {
+        Debug.Log("Remove pirates");
+        int count = _pirates.Count;
+        for (int index = count - 1; index >= 0; index--)
+        {
+            GameObject obj = _pirates[index].gameObject;
+            _pirates.Remove(_pirates[index]);
+            Destroy(obj);
+        }
+    }
+    
     private void RemovePirate(int index)
     {
         GameObject obj = _pirates[index].gameObject;
@@ -108,4 +115,16 @@ public class Boat : MonoBehaviour
         return directionForce;
     }
 
+    private void OnChangedCurrentValue(int currentValue)
+    {
+        Debug.Log("currentValue " + currentValue);
+        _shipChanger.OnChangedCurrentValue(currentValue);
+        if(gameObject.activeSelf)
+            FillPirates(currentValue);
+    }
+    
+    private void OnShipChanged()
+    {
+        RemoveAllPirate();
+    }
 }
