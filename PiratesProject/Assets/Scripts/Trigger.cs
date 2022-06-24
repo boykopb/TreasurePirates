@@ -2,6 +2,7 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using Managers;
+using Unity.Mathematics;
 using UnityEngine;
 
 enum TypeOfTrigger
@@ -13,6 +14,9 @@ public class Trigger : MonoBehaviour
 {
     [SerializeField] protected int _countPirate;
     [SerializeField] private TypeOfTrigger _typeTrigger;
+    [SerializeField] private bool _isDiedAfterTrigger = true;
+    [SerializeField] private AudioSource _audio;
+    [SerializeField] private GameObject _effectAfterTrigger;
     private void OnTriggerEnter(Collider other)
     {
         if (other.TryGetComponent(out BoatTrigger boatTrigger))
@@ -26,7 +30,8 @@ public class Trigger : MonoBehaviour
                     break;
             }
             ChangeValue();
-            Destroy();
+            if(_isDiedAfterTrigger)
+                Destroy();
         }
     }
 
@@ -37,6 +42,10 @@ public class Trigger : MonoBehaviour
 
     private void Destroy()
     {
+        if(_effectAfterTrigger)
+            Instantiate(_effectAfterTrigger, transform.position, Quaternion.identity);
+        if(_audio)
+            _audio.Play();
         Destroy(gameObject);
     }
 }

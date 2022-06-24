@@ -27,7 +27,6 @@ public class Boat : MonoBehaviour
     {
         if (_pirates.Count < newCountPirate)
         {
-            Debug.Log("FillAddPirates");
             for (int i = _pirates.Count; i < newCountPirate; i++)
             {
                 Vector3 spawnPos = GetSpawnPos(i);
@@ -40,9 +39,7 @@ public class Boat : MonoBehaviour
             {
                 RemovePirate(i);
             }
-            Debug.Log("FillRemovePirates");
         }
-        
     }
 
     private Vector3 GetSpawnPos(int index)
@@ -72,7 +69,6 @@ public class Boat : MonoBehaviour
     
     private void RemoveAllPirate()
     {
-        Debug.Log("Remove pirates");
         int count = _pirates.Count;
         for (int index = count - 1; index >= 0; index--)
         {
@@ -117,7 +113,6 @@ public class Boat : MonoBehaviour
 
     private void OnChangedCurrentValue(int currentValue)
     {
-        Debug.Log("currentValue " + currentValue);
         _shipChanger.OnChangedCurrentValue(currentValue);
         if(gameObject.activeSelf)
             FillPirates(currentValue);

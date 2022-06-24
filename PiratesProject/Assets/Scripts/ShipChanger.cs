@@ -49,8 +49,6 @@ public class ShipChanger : MonoBehaviour
       EventManager.Current.ChangedCurrentValue(_countPirateLevel[^1]);
       return;
     }
-      
-    Debug.Log("UpgradeShip");
     EventManager.Current.ShipChanged();
     
     _currentShip++;
@@ -58,7 +56,6 @@ public class ShipChanger : MonoBehaviour
     for (var i = 0; i < _ships.Count; i++)
     {
       _ships[i].SetActive(i == _currentShip);
-      //Debug.Log(i == _currentShip);
     }
   }
 
@@ -67,7 +64,6 @@ public class ShipChanger : MonoBehaviour
   {
     if (_currentShip == 0) 
       return;
-    Debug.Log("DowngradeShip");
     EventManager.Current.ShipChanged();
     _currentShip--;
     

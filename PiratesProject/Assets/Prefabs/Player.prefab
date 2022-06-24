@@ -559,7 +559,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &5569511137334950798
 Transform:
   m_ObjectHideFlags: 0
@@ -627,6 +627,9 @@ MonoBehaviour:
   _deltaX: 0
   _startSpawnPos: {fileID: 1573030810}
   _forceToSide: 2
+  _parentForPirate: {fileID: 7885966278254264294}
+  _shipChanger: {fileID: 0}
+  _pirates: []
 --- !u!1 &3984571568697186143
 GameObject:
   m_ObjectHideFlags: 0
@@ -734,6 +737,9 @@ MonoBehaviour:
   _deltaX: 0.5
   _startSpawnPos: {fileID: 1372026988}
   _forceToSide: 2
+  _parentForPirate: {fileID: 7885966278254264294}
+  _shipChanger: {fileID: 0}
+  _pirates: []
 --- !u!1 &6851292178549116696
 GameObject:
   m_ObjectHideFlags: 0
@@ -988,6 +994,11 @@ PrefabInstance:
       propertyPath: pirateCounter
       value: 
       objectReference: {fileID: 0}
+    - target: {fileID: 183341362988168548, guid: 7e0fbd77b8b0c4554a14718988afd28d,
+        type: 3}
+      propertyPath: _parentForPirate
+      value: 
+      objectReference: {fileID: 7885966278254264294}
     - target: {fileID: 183341362988168559, guid: 7e0fbd77b8b0c4554a14718988afd28d,
         type: 3}
       propertyPath: m_Name
