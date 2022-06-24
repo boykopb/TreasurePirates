@@ -1318,12 +1318,12 @@ ParticleSystem:
       maxColor: {r: 1, g: 1, b: 1, a: 1}
       maxGradient:
         serializedVersion: 2
-        key0: {r: 1, g: 0, b: 0, a: 1}
+        key0: {r: 0.3207547, g: 0.26477394, b: 0.26477394, a: 1}
         key1: {r: 1, g: 0, b: 0.43529412, a: 1}
         key2: {r: 1, g: 0, b: 0.5568628, a: 0}
         key3: {r: 0.34901962, g: 0.07450981, b: 0.44705883, a: 0}
         key4: {r: 0.23529412, g: 0.043137256, b: 1, a: 0}
-        key5: {r: 0, g: 0, b: 0, a: 0}
+        key5: {r: 0.23529412, g: 0.043137256, b: 1, a: 0}
         key6: {r: 0, g: 0, b: 0, a: 0}
         key7: {r: 0, g: 0, b: 0, a: 0}
         ctime0: 0
@@ -1331,7 +1331,7 @@ ParticleSystem:
         ctime2: 23164
         ctime3: 48452
         ctime4: 65535
-        ctime5: 0
+        ctime5: 65535
         ctime6: 0
         ctime7: 0
         atime0: 0
@@ -28963,7 +28963,7 @@ GameObject:
   - component: {fileID: 19985476}
   - component: {fileID: 8220856}
   m_Layer: 0
-  m_Name: SuperEvilDeath
+  m_Name: VFX_SuperEvilDeath
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -33756,7 +33756,7 @@ AudioSource:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 172590}
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: 8dfcae34791b3a447b81d6653208f596, type: 3}

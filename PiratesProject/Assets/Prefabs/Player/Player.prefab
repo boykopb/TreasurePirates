@@ -834,7 +834,7 @@ GameObject:
   - component: {fileID: 7885966278254264294}
   - component: {fileID: 7885966278254264293}
   - component: {fileID: 7885966278254264292}
-  - component: {fileID: 1857375089}
+  - component: {fileID: 1023085926}
   m_Layer: 0
   m_Name: Player
   m_TagString: Untagged
@@ -887,19 +887,32 @@ MonoBehaviour:
   _maxAngle: 50
   _maxPosition: 2.5
   _rotationSensitivity: 0.2
---- !u!65 &1857375089
-BoxCollider:
+--- !u!114 &1023085926
+MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7885966278254264295}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 0
-  serializedVersion: 2
-  m_Size: {x: 0.6696687, y: 2.302146, z: 1}
-  m_Center: {x: 0.01088208, y: 0.91589284, z: 1}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b22ff97609b04500858158160d399bdf, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _deathVFX: {fileID: 172590, guid: 93c383a7bb6b65547bc569e7d7f10507, type: 3}
+  _deathSFX: {fileID: 8300000, guid: e102800bfe4a3464bb5cf29871da2588, type: 3}
+  _destroyDelayTime: 3
+  _drownLerpRate: 70
+  _playerComponentsToOff:
+  - {fileID: 7885966278254264292}
+  - {fileID: 7885966278254264293}
+  _playerColliders:
+  - {fileID: 641626689}
+  - {fileID: 641626690}
+  - {fileID: 7885966276658812162}
+  - {fileID: 2070240426}
+  - {fileID: 158741617}
+  - {fileID: 158741618}
 --- !u!1001 &7885966276980999417
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1073,6 +1086,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 208eabd5b83464c22bf0b332993644c8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!65 &7885966276658812162 stripped
+BoxCollider:
+  m_CorrespondingSourceObject: {fileID: 484233723, guid: 7e0fbd77b8b0c4554a14718988afd28d,
+    type: 3}
+  m_PrefabInstance: {fileID: 7885966276980999417}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &8069271252736553369 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 183341362988168544, guid: 7e0fbd77b8b0c4554a14718988afd28d,
