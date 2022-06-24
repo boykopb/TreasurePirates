@@ -22,7 +22,7 @@ public class ShipChanger : MonoBehaviour
 
   private void OnChangedCurrentValue(int value)
   {
-    if (value < _prevLevelBorder)
+    if (value <= _prevLevelBorder)
       DowngradeShip();
     else if (value > _nextLevelBorder)
       UpgradeShip();
