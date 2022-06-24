@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 8549202899072692833}
   - component: {fileID: 8549202899072692834}
   - component: {fileID: 8549202899072692846}
+  - component: {fileID: 1875816190}
   m_Layer: 0
   m_Name: AddOnePirate
   m_TagString: Untagged
@@ -63,6 +64,23 @@ MonoBehaviour:
   _countPirate: 1
   _typeTrigger: 0
   _isDiedAfterTrigger: 1
+  _destroyDelayTime: 0
+  _audioClip: {fileID: 0}
+  _effectAfterTrigger: {fileID: 0}
+  _audioClipPlayDelayTime: 0
+--- !u!114 &1875816190
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8549202899072692837}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 36aa02d38bb10b548bc7b8879596b15c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  WaterVolumeHelper: {fileID: 0}
 --- !u!1001 &2418603343598355718
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -100,7 +118,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 494126, guid: 81a28c375b28168439a9968612b54c17, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0
+      value: -1
       objectReference: {fileID: 0}
     - target: {fileID: 494126, guid: 81a28c375b28168439a9968612b54c17, type: 3}
       propertyPath: m_LocalPosition.z
@@ -177,7 +195,7 @@ PrefabInstance:
     - target: {fileID: 2673460243707273990, guid: 00460cac66b96498cadd7900e299a014,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0
+      value: -1
       objectReference: {fileID: 0}
     - target: {fileID: 2673460243707273990, guid: 00460cac66b96498cadd7900e299a014,
         type: 3}

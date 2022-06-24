@@ -416,6 +416,7 @@ GameObject:
   - component: {fileID: 7885966278254264293}
   - component: {fileID: 7885966278254264292}
   - component: {fileID: 1023085926}
+  - component: {fileID: 1189042815}
   m_Layer: 0
   m_Name: Player
   m_TagString: Untagged
@@ -494,6 +495,84 @@ MonoBehaviour:
   - {fileID: 2070240426}
   - {fileID: 158741617}
   - {fileID: 158741618}
+--- !u!114 &1189042815
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7885966278254264295}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f6d1b5217e1c48a0b9d40eb83da867f8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _executeType: 1
+  _animationCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0.051374972
+      value: 0.5017298
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0
+    - serializedVersion: 3
+      time: 0.12818243
+      value: 1.0443166
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0
+    - serializedVersion: 3
+      time: 0.19531757
+      value: 0.72859865
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0
+    - serializedVersion: 3
+      time: 0.24993026
+      value: 1.0105841
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0
+    - serializedVersion: 3
+      time: 0.3162191
+      value: 0.775318
+      inSlope: -0.43630123
+      outSlope: -0.43630123
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.8284378
+      outWeight: 0
+    - serializedVersion: 3
+      time: 0.36089987
+      value: 1.0003699
+      inSlope: 0.23225652
+      outSlope: 0.23225652
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 1
+      outWeight: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  _startScale: {x: 0.5, y: 0.5, z: 0.5}
+  _lerpRate: 1
+  _shipChanger: {fileID: 0}
+  _upgradeSFX: {fileID: 8300000, guid: c5986ada988087a4d861b93f6e7359e1, type: 3}
+  _upgradeVFX: {fileID: 165102, guid: 4de72d65c2293424cbe6461a89fe2997, type: 3}
 --- !u!1001 &143583451
 PrefabInstance:
   m_ObjectHideFlags: 0

@@ -599,7 +599,6 @@ MonoBehaviour:
   _onFinishConfettiSFX: {fileID: 8300000, guid: 5e84b903be3b3fc45bb44a9b256c005e,
     type: 3}
   _fxCooldownPeriod: 0.2
-  _onStopCameraLightShake: {fileID: 0}
   _waitTimeBeforeFinishLevel: 0.8
 --- !u!1 &8876781487793442304
 GameObject:

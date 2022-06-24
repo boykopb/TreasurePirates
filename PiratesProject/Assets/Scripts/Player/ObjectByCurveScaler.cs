@@ -6,23 +6,31 @@ namespace Player
   public enum ExecuteType
   {
     OnStart,
-    OnDemand
+    OnEvent
   }
 
   public class ObjectByCurveScaler : MonoBehaviour
   {
-    [SerializeField] private ExecuteType _executeType;
+    [SerializeField] private protected ExecuteType _executeType = ExecuteType.OnStart;
     [SerializeField] private AnimationCurve _animationCurve;
     [SerializeField] private Vector3 _startScale = new Vector3(0.5f, 0.5f, 0.5f);
     [SerializeField] private float _lerpRate = 1f;
 
-    private void Start()
+
+    private protected virtual void Start()
     {
-      if (_executeType == ExecuteType.OnStart)
-        StartCoroutine(ChangeScale());
+      if (_executeType == ExecuteType.OnStart) 
+        ChangeScale();
     }
 
-    private IEnumerator ChangeScale()
+
+    private protected void ChangeScale()
+    {
+      StartCoroutine(ChangeScaleRoutine());
+    }
+  
+
+  private IEnumerator ChangeScaleRoutine()
     {
       var endScale = transform.localScale;
 
@@ -32,5 +40,8 @@ namespace Player
         yield return null;
       }
     }
+    
+    
+    
   }
 }

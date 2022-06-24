@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using UnityEngine;
 
 namespace Managers
@@ -8,12 +9,16 @@ namespace Managers
     [SerializeField] private List<GameObject> _ships;
     [SerializeField] private PirateCounter _pirateCounter;
     [SerializeField] private int _minBorder = 0;
-    
+
     private int[] _countPirateLevel;
     private int _currentShip = 0;
     private int _currentCount;
     private int _nextLevelBorder;
     private int _prevLevelBorder = 0;
+
+    public event Action OnUpgradeShipEvent;
+    public event Action OnDowngradeShipEvent;
+
 
     private void Start()
     {
@@ -33,7 +38,7 @@ namespace Managers
 
     public void ChangeShip()
     {
-      _currentShip = _currentShip == _ships.Count - 1 ? 0 :_currentShip + 1;
+      _currentShip = _currentShip == _ships.Count - 1 ? 0 : _currentShip + 1;
 
       for (var i = 0; i < _ships.Count; i++)
       {
@@ -49,10 +54,12 @@ namespace Managers
         EventManager.Current.ChangedCurrentValue(_countPirateLevel[^1]);
         return;
       }
+
       EventManager.Current.ShipChanged();
-    
+
       _currentShip++;
-    
+      OnUpgradeShipEvent?.Invoke();
+
       for (var i = 0; i < _ships.Count; i++)
       {
         _ships[i].SetActive(i == _currentShip);
@@ -62,11 +69,12 @@ namespace Managers
 
     private void DowngradeShip()
     {
-      if (_currentShip == 0) 
+      if (_currentShip == 0)
         return;
       EventManager.Current.ShipChanged();
       _currentShip--;
-    
+      OnDowngradeShipEvent?.Invoke();
+
       for (var i = 0; i < _ships.Count; i++)
       {
         _ships[i].SetActive(i == _currentShip);
@@ -77,7 +85,7 @@ namespace Managers
     {
       int prevIndex = newIndex == _minBorder ? newIndex : _currentShip;
       _prevLevelBorder = _countPirateLevel[prevIndex];
-    
+
       int nextIndex = newIndex == _countPirateLevel.Length - 1 ? newIndex : _currentShip + 1;
       _nextLevelBorder = _countPirateLevel[nextIndex];
     }
