@@ -20,10 +20,14 @@ namespace Enemy
         [SerializeField] private bool _isDiedAfterTrigger = true;
         [SerializeField] private AudioSource _audio;
         [SerializeField] private GameObject _effectAfterTrigger;
+
+
+        private bool _isHit;
         private void OnTriggerEnter(Collider other)
         {
-            if (other.TryGetComponent(out BoatTrigger boatTrigger))
+            if (other.TryGetComponent(out BoatTrigger boatTrigger) || !_isHit)
             {
+                _isHit = true;
                 switch (_typeTrigger)
                 {
                     case TypeOfTrigger.Add:

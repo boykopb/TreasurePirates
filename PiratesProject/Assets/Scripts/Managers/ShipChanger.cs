@@ -8,7 +8,7 @@ namespace Managers
     [SerializeField] private List<GameObject> _ships;
     [SerializeField] private PirateCounter _pirateCounter;
     [SerializeField] private int _minBorder = 0;
-  
+    
     private int[] _countPirateLevel;
     private int _currentShip = 0;
     private int _currentCount;

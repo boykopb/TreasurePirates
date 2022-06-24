@@ -1,7 +1,6 @@
 using System;
 using System.Collections;
 using FinishLogic;
-using MoreMountains.Feedbacks;
 using Player;
 using UnityEngine;
 
@@ -20,7 +19,6 @@ namespace Managers
     [SerializeField] private ParticleSystem[] _onFinishConfettiVFX;
     [SerializeField] private AudioClip _onFinishConfettiSFX;
     [SerializeField] private float _fxCooldownPeriod = 0.2f;
-    [SerializeField] private MMF_Player _onStopCameraLightShake;
     [SerializeField] private float _waitTimeBeforeFinishLevel = 0.8f;
   
 
@@ -61,7 +59,7 @@ namespace Managers
     private void DoActionsOnBoatStop()
     {
       _isBoatMovedToStopPosition = true;
-      _onStopCameraLightShake.PlayFeedbacks();
+      ScreenShaker.Instance.DoLightShake();
       StartCoroutine(InvokeFinishLevel());
     }
 

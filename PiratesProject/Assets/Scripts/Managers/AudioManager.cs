@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+﻿using System.Collections;
+using UnityEngine;
 
 namespace Managers
 {
@@ -33,13 +34,18 @@ namespace Managers
     }
     
     
-    public void PlaySFX(AudioClip clip)
+    public void PlaySFX(AudioClip clip, float delayTime = 0f)
     {
+      StartCoroutine(PlaySFXOnDelay(clip, delayTime));
+    }
+
+    private IEnumerator PlaySFXOnDelay(AudioClip clip, float delayTime)
+    {
+      yield return new WaitForSeconds(delayTime);
       _soundEffectsSource.pitch = Random.Range(0.9f, 1.1f);
       _soundEffectsSource.PlayOneShot(clip);
     }
 
-    
     private void PlayLevelMusic()
     {
       _levelMusicSource.Play();
