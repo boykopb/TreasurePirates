@@ -1,5 +1,6 @@
 using System;
 using Cinemachine;
+using Player;
 using UnityEngine;
 
 namespace Managers
@@ -10,7 +11,7 @@ namespace Managers
     private CameraFollow _cameraFollow;
 
     [SerializeField] private CinemachineVirtualCamera _virtualCamera;
-    [SerializeField] private FinishLevelManager _finishLevelManager;
+    [SerializeField] private FinishLineManager _finishLineManager;
 
     [Header("Camera finish params")] [SerializeField]
     private float _onFinishFOV = 80;
@@ -29,10 +30,10 @@ namespace Managers
 
     private void Start()
     {
-      _finishLevelManager.OnLevelFinishedEvent += OnLevelFinish;
+      _finishLineManager.OnLevelFinishedEvent += OnLineFinish;
     }
 
-    private void OnLevelFinish()
+    private void OnLineFinish()
     {
       _isLevelFinished = true;
     }

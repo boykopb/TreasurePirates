@@ -1,11 +1,13 @@
 using System;
 using System.Collections;
+using FinishLogic;
 using MoreMountains.Feedbacks;
+using Player;
 using UnityEngine;
 
 namespace Managers
 {
-  public class FinishLevelManager : MonoBehaviour
+  public class FinishLineManager : MonoBehaviour
   {
     [SerializeField] private FinishLineTrigger _finishLine;
 
@@ -89,7 +91,7 @@ namespace Managers
       for (var i = 0; i < _onFinishConfettiVFX.Length; i++)
       {
         _onFinishConfettiVFX[i].Play();
-        SoundManager.Instance.PlaySFX(_onFinishConfettiSFX);
+        AudioManager.Instance.PlaySFX(_onFinishConfettiSFX);
         yield return new WaitForSeconds(_fxCooldownPeriod);
       }
     }

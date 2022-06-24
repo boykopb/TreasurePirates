@@ -46,12 +46,15 @@ namespace Managers
 
       if (_pirateCounter.Count > 1)
         MultiplyCoins();
+      
+      
+      //TODO - STOP GAME AND SHOW WIN SCREEN
     }
 
     private void MultiplyCoins()
     {
       _coinManager.MultiplyCoins(_pirateCounter.Count);
-      SoundManager.Instance.PlaySFX(_goldMultiplySfx);
+      AudioManager.Instance.PlaySFX(_goldMultiplySfx);
     }
   }
 }

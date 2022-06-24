@@ -1,6 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
-using CommonLogic;
+using Player;
 using UnityEngine;
 
 namespace Managers

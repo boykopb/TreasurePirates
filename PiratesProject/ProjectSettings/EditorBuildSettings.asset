@@ -6,6 +6,6 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
-    path: Assets/Scenes/PavelSceneWithFullEnding.unity
+    path: Assets/Scenes/PavelSceneFullEnding.unity
     guid: fc967860e2508924e943ba0223c2ed3b
   m_configObjects: {}

@@ -1,4 +1,5 @@
 using Managers;
+using Player;
 using UnityEngine;
 
 namespace Items
@@ -34,7 +35,7 @@ namespace Items
       var pickUpVFX = Instantiate(_onPickUpVFX);
       pickUpVFX.transform.position = otherTransform.position + _vfxPositionOffset;
       
-      SoundManager.Instance.PlaySFX(_onPickUpSFX);
+      AudioManager.Instance.PlaySFX(_onPickUpSFX);
       Destroy(gameObject);
     }
   }

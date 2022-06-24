@@ -1,18 +1,22 @@
 using System;
+using Player;
 using UnityEngine;
 
-public class FinishLineTrigger : MonoBehaviour
+namespace FinishLogic
 {
-  [SerializeField] private GameObject _finishLineGameObject;
-  
-  public event Action OnFinishLineReachedEvent;
-
-  private void OnTriggerEnter(Collider other)
+  public class FinishLineTrigger : MonoBehaviour
   {
-    if (other.attachedRigidbody.TryGetComponent<Movement>(out _))
+    [SerializeField] private GameObject _finishLineGameObject;
+  
+    public event Action OnFinishLineReachedEvent;
+
+    private void OnTriggerEnter(Collider other)
     {
-      OnFinishLineReachedEvent?.Invoke();
-      _finishLineGameObject.SetActive(false);
+      if (other.attachedRigidbody.TryGetComponent<Movement>(out _))
+      {
+        OnFinishLineReachedEvent?.Invoke();
+        _finishLineGameObject.SetActive(false);
+      }
     }
   }
 }

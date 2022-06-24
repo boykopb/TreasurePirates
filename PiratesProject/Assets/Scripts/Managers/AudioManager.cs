@@ -2,7 +2,7 @@
 
 namespace Managers
 {
-  public class SoundManager : MonoBehaviour
+  public class AudioManager : MonoBehaviour
   {
     [Space, Header("Sources")] 
     [SerializeField] private AudioSource _levelMusicSource;
@@ -19,7 +19,7 @@ namespace Managers
     [SerializeField, Range(0, 1)] private float _soundFxVolume = 0.8f;
 
   
-    public static SoundManager Instance;
+    public static AudioManager Instance;
     
 
     private void Awake() =>
