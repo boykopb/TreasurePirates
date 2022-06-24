@@ -142,6 +142,7 @@ MonoBehaviour:
   _timeToDestroy: 10
   _countDamagePirate: 1
   _fireEffect: {fileID: 35380871}
+  _shotSFX: {fileID: 8300000, guid: 321feb9f51af885488e5ed433aecd467, type: 3}
   _isFire: 0
 --- !u!114 &1556800273
 MonoBehaviour:

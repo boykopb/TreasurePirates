@@ -6,7 +6,7 @@ namespace Player
   public enum ExecuteType
   {
     OnStart,
-    OnEvent
+    OnDemand
   }
 
   public class ObjectByCurveScaler : MonoBehaviour
@@ -17,14 +17,14 @@ namespace Player
     [SerializeField] private float _lerpRate = 1f;
 
 
-    private protected virtual void Start()
+    private void Start()
     {
       if (_executeType == ExecuteType.OnStart) 
         ChangeScale();
     }
 
 
-    private protected void ChangeScale()
+    public void ChangeScale()
     {
       StartCoroutine(ChangeScaleRoutine());
     }

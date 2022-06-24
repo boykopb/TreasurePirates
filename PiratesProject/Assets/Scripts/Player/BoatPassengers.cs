@@ -1,32 +1,32 @@
-using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using Managers;
 using UnityEngine;
 
 namespace Player
 {
-  public class Boat : MonoBehaviour
+  public class BoatPassengers : MonoBehaviour
   {
-    [SerializeField] private PirateCounter pirateCounter;
-    [SerializeField] private GameObject _prefabPirate;
-    [SerializeField] private int _countInRow = 2;
-    [SerializeField] private float _deltaZ = 5f;
-    [SerializeField] private float _deltaX = 5f;
-    [SerializeField] private Transform _startSpawnPos;
-    [SerializeField] private float _forceToSide = 10f;
-    [SerializeField] private Transform _parentForPirate;
+    [SerializeField] private PirateCounter _pirateCounter;
     [SerializeField] private ShipChanger _shipChanger;
-
+    [SerializeField] private GameObject _prefabPirate;
+    [SerializeField] private Transform[] _startPositionOnShipTransform;
+    [SerializeField] private float _forceToSide = 2f;
     [SerializeField] private List<GameObject> _pirates = new List<GameObject>();
 
+    private List<BoatSeatsInfo> _boatSeatsInfos;
 
-    
     void Start()
     {
+      _boatSeatsInfos = new List<BoatSeatsInfo>();
+      _boatSeatsInfos.Add(new BoatSeatsInfo(2, 0.5f, 0f));
+      _boatSeatsInfos.Add(new BoatSeatsInfo(2, 0.45f, 0.8f));
+      _boatSeatsInfos.Add(new BoatSeatsInfo(2, 0.5f, 0.5f));
+
+
       EventManager.Current.OnChangedCurrentValue += OnChangedCurrentValue;
       _shipChanger.OnUpgradeShipEvent += OnShipUpgrade;
       _shipChanger.OnDowngradeShipEvent += OnShipDowngrade;
-      FillPirates(pirateCounter.Count);
+      FillPirates(_pirateCounter.Count);
     }
 
 
@@ -58,23 +58,25 @@ namespace Player
 
     private Vector3 GetSpawnPos(int index)
     {
-      Vector3 spawnPos = _startSpawnPos.localPosition;
+      var currentShipIndex = _shipChanger.GetCurrentShipIndex();
+      var currentBoat = _boatSeatsInfos[currentShipIndex];
+      Vector3 spawnPos = _startPositionOnShipTransform[currentShipIndex].localPosition;
       //Вычисляем остаток от индекса
-      int indexX = index % _countInRow;
+      int indexX = index % currentBoat.CountInRow;
       //Вычисляем позицию по Х
-      spawnPos.x += _deltaX * indexX;
+      spawnPos.x += currentBoat.DeltaX * indexX;
 
       //Вычисляем целое от деления индекса на кол-во в ряду
-      int indexZ = index / _countInRow;
+      int indexZ = index / currentBoat.CountInRow;
       //Вычисляем позицию по Z
-      spawnPos.z -= _deltaZ * indexZ;
+      spawnPos.z -= currentBoat.DeltaZ * indexZ;
 
       return spawnPos;
     }
 
     private void AddPirate(Vector3 spawnPos)
     {
-      GameObject pirate = Instantiate(_prefabPirate, _parentForPirate);
+      GameObject pirate = Instantiate(_prefabPirate, transform);
       if (_prefabPirate.TryGetComponent(out Rigidbody rigidbody))
         rigidbody.isKinematic = true;
       pirate.transform.localPosition = spawnPos;
@@ -116,13 +118,16 @@ namespace Player
 
     private Vector3 GetDirectionForce(int index)
     {
+      var currentShipIndex = _shipChanger.GetCurrentShipIndex();
+      var currentBoat = _boatSeatsInfos[currentShipIndex];
+
       Vector3 directionForce = Vector3.zero;
       directionForce += transform.up;
 
       //Вычисляем позицию пирата по линии
-      int indexX = index % _countInRow;
+      int indexX = index % currentBoat.CountInRow;
       //Проверяем в какой стороне сидит пират
-      if (indexX >= _countInRow / 2)
+      if (indexX >= currentBoat.CountInRow / 2)
         directionForce += transform.right * _forceToSide;
       else
         directionForce -= transform.right * _forceToSide;
@@ -133,7 +138,7 @@ namespace Player
     private void OnChangedCurrentValue(int currentValue)
     {
       _shipChanger.OnChangedCurrentValue(currentValue);
-      
+
       if (gameObject.activeSelf)
         FillPirates(currentValue);
     }
@@ -145,20 +150,8 @@ namespace Player
 
     private void OnShipDowngrade()
     {
-      //InstantiateAndThrowPirate();
-      Debug.Log(gameObject.name);
+      RemovePirate(_pirates.Count - 1);
       RemoveAllPirate();
-    }
-
-    //TODO Need Refactor all class, delete this method
-    private void InstantiateAndThrowPirate()
-    {
-      GameObject pirate = Instantiate(_prefabPirate, _parentForPirate);
-      pirate.transform.localPosition = GetSpawnPos(0);
-
-      ThrowPirateToWater(0, pirate);
-      Destroy(pirate, 2f);
-
     }
   }
 }

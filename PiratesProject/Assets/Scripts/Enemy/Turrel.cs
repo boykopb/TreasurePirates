@@ -1,4 +1,5 @@
 using System.Collections;
+using Managers;
 using Player;
 using UnityEngine;
 
@@ -13,8 +14,13 @@ namespace Enemy
         [SerializeField] private float _timeToDestroy = 10f;
         [SerializeField] private int _countDamagePirate = 1;
         [SerializeField] private ParticleSystem _fireEffect;
-        private Boat _boat;
+        [SerializeField] private AudioClip _shotSFX;
+        
         [SerializeField] private bool _isFire = false;
+        
+        
+        
+        private Boat _boat;
         private float timer = 0f;
 
         private void Update()
@@ -23,6 +29,7 @@ namespace Enemy
             if (timer >= _timeReload && gameObject.activeSelf)
             {
                 timer = 0;
+                AudioManager.Instance.PlaySFX(_shotSFX);
                 SpawnBullet();
             }
         }

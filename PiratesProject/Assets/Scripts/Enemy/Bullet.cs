@@ -10,12 +10,18 @@ namespace Enemy
         [SerializeField] private GameObject _deathEffect;
     
         private int _countDamagePirate = 0;
-    
+        private bool _isHit;
+
+        private void Update()
+        {
+            transform.position += transform.forward * _speed * Time.deltaTime;
+        }
 
         private void OnTriggerEnter(Collider other)
         {
-            if (other.TryGetComponent(out BoatTrigger triggerBoat))
+            if (other.TryGetComponent(out BoatTrigger triggerBoat) || !_isHit)
             {
+                _isHit = true;
                 EventManager.Current.ChangedCountPirate(_countDamagePirate);
                 Destroy();
             }
@@ -30,11 +36,6 @@ namespace Enemy
         private void ActivateDeathEffects()
         {
             Instantiate(_deathEffect,transform.position, Quaternion.identity);
-        }
-
-        void Update()
-        {
-            transform.position += transform.forward * _speed * Time.deltaTime;
         }
 
         public void SetPirateDamage(int value)

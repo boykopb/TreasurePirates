@@ -154,7 +154,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1372026988}
   m_Layer: 0
-  m_Name: StartPointSpawn
+  m_Name: StartPointSpawnMedium
   m_TagString: Untagged
   m_Icon: {fileID: 1206586993520771344, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
@@ -185,7 +185,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1573030810}
   m_Layer: 0
-  m_Name: StartPointSpawn
+  m_Name: StartPointSpawnSmall
   m_TagString: Untagged
   m_Icon: {fileID: 1206586993520771344, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
@@ -224,7 +224,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &5569511137334950798
 Transform:
   m_ObjectHideFlags: 0
@@ -279,7 +279,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2851681754517546488}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: c6837b2f5a5cc42458c4bebc45877486, type: 3}
   m_Name: 
@@ -346,7 +346,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &6463840671386832824
 Transform:
   m_ObjectHideFlags: 0
@@ -388,7 +388,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5378550736253323414}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: c6837b2f5a5cc42458c4bebc45877486, type: 3}
   m_Name: 
@@ -416,7 +416,9 @@ GameObject:
   - component: {fileID: 7885966278254264293}
   - component: {fileID: 7885966278254264292}
   - component: {fileID: 1023085926}
-  - component: {fileID: 1189042815}
+  - component: {fileID: 3733842197783500038}
+  - component: {fileID: 1189042817}
+  - component: {fileID: 5935782331239647502}
   m_Layer: 0
   m_Name: Player
   m_TagString: Untagged
@@ -495,7 +497,7 @@ MonoBehaviour:
   - {fileID: 2070240426}
   - {fileID: 158741617}
   - {fileID: 158741618}
---- !u!114 &1189042815
+--- !u!114 &3733842197783500038
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -504,7 +506,50 @@ MonoBehaviour:
   m_GameObject: {fileID: 7885966278254264295}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f6d1b5217e1c48a0b9d40eb83da867f8, type: 3}
+  m_Script: {fileID: 11500000, guid: 89812af4c07247e497ebd18d3dd03f52, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _ships:
+  - {fileID: 2851681754517546488}
+  - {fileID: 5378550736253323414}
+  - {fileID: 8069271252736553366}
+  _pirateCounter: {fileID: 0}
+  _minBorder: 0
+  _upgradeSFX: {fileID: 8300000, guid: 5e84b903be3b3fc45bb44a9b256c005e, type: 3}
+  _upgradeVFX: {fileID: 165102, guid: 4de72d65c2293424cbe6461a89fe2997, type: 3}
+  _curveScaler: {fileID: 5935782331239647502}
+--- !u!114 &1189042817
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7885966278254264295}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2538b284c49548e2af0ad453bdf7fe66, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _pirateCounter: {fileID: 0}
+  _shipChanger: {fileID: 3733842197783500038}
+  _prefabPirate: {fileID: 4923197656084891360, guid: 68c8ea5f0a482436fa13ec1121e99540,
+    type: 3}
+  _startPositionOnShipTransform:
+  - {fileID: 1573030810}
+  - {fileID: 1372026988}
+  - {fileID: 8069271252921132646}
+  _forceToSide: 10
+  _pirates: []
+--- !u!114 &5935782331239647502
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7885966278254264295}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 44a60e402880be6429fb24baf95c8324, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   _executeType: 1
@@ -570,9 +615,6 @@ MonoBehaviour:
     m_RotationOrder: 4
   _startScale: {x: 0.5, y: 0.5, z: 0.5}
   _lerpRate: 1
-  _shipChanger: {fileID: 0}
-  _upgradeSFX: {fileID: 8300000, guid: c5986ada988087a4d861b93f6e7359e1, type: 3}
-  _upgradeVFX: {fileID: 165102, guid: 4de72d65c2293424cbe6461a89fe2997, type: 3}
 --- !u!1001 &143583451
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -822,6 +864,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 183341362988168548, guid: 7e0fbd77b8b0c4554a14718988afd28d,
         type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 183341362988168548, guid: 7e0fbd77b8b0c4554a14718988afd28d,
+        type: 3}
       propertyPath: pirateCounter
       value: 
       objectReference: {fileID: 0}
@@ -839,6 +886,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_IsActive
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 183341363709551262, guid: 7e0fbd77b8b0c4554a14718988afd28d,
+        type: 3}
+      propertyPath: m_Name
+      value: StartPointSpawnLarge
       objectReference: {fileID: 0}
     - target: {fileID: 183341363709551263, guid: 7e0fbd77b8b0c4554a14718988afd28d,
         type: 3}
@@ -915,9 +967,21 @@ BoxCollider:
     type: 3}
   m_PrefabInstance: {fileID: 7885966276980999417}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &8069271252736553366 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 183341362988168559, guid: 7e0fbd77b8b0c4554a14718988afd28d,
+    type: 3}
+  m_PrefabInstance: {fileID: 7885966276980999417}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &8069271252736553369 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 183341362988168544, guid: 7e0fbd77b8b0c4554a14718988afd28d,
+    type: 3}
+  m_PrefabInstance: {fileID: 7885966276980999417}
+  m_PrefabAsset: {fileID: 0}
+--- !u!4 &8069271252921132646 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 183341363709551263, guid: 7e0fbd77b8b0c4554a14718988afd28d,
     type: 3}
   m_PrefabInstance: {fileID: 7885966276980999417}
   m_PrefabAsset: {fileID: 0}
