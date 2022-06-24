@@ -24,7 +24,7 @@ namespace Items
       if (!other.TryGetComponent<BoatTrigger>(out _) || _isTaken)
         return;
 
-      PickUp(other.transform);
+      PickUp(other.transform.root);
     }
 
     private void PickUp(Transform otherTransform)

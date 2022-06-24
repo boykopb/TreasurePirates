@@ -1,17 +1,21 @@
-﻿using UnityEditor;
+﻿using Enemy;
+using UnityEditor;
 using UnityEngine;
 
 namespace Managers
 {
+  [RequireComponent(typeof(Turrel))]
   public class GameObjectActivator : MonoBehaviour
   {
     [SerializeField] private float _activateDistance = 20f;
 
     private EnemyManager _enemyManager;
     private bool _isActive = true;
-
+    private Turrel _turrel;
+    
     private void Awake()
     {
+      _turrel = GetComponent<Turrel>();
       _enemyManager = FindObjectOfType<EnemyManager>();
       _enemyManager.AddToList(this);
     }
@@ -39,16 +43,20 @@ namespace Managers
       if (_isActive != value)
       {
         _isActive = value;
-        gameObject.SetActive(value);
+        //gameObject.SetActive(value);
+        _turrel.enabled = value;
       }
     }
 
     private bool IsCloseTo(Vector3 target)
     {
-      var toTarget = transform.position - target;
+      /*var toTarget = transform.position - target;
       var sqrtMagnitude = Vector3.SqrMagnitude(toTarget);
       
-      return sqrtMagnitude < _activateDistance * _activateDistance;
+      return sqrtMagnitude < _activateDistance * _activateDistance;*/
+
+      var distance = transform.position.z - target.z;
+      return distance < _activateDistance && distance > -3;
     }
   }
 }

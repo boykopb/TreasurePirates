@@ -185,26 +185,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 2946223096210138457, guid: 15e3f49389140c14a974e361a2943f40,
-        type: 3}
-      propertyPath: m_VertexStreams.Array.data[1]
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 2946223096210138457, guid: 15e3f49389140c14a974e361a2943f40,
-        type: 3}
-      propertyPath: m_VertexStreams.Array.data[2]
-      value: 3
-      objectReference: {fileID: 0}
-    - target: {fileID: 2946223096210138457, guid: 15e3f49389140c14a974e361a2943f40,
-        type: 3}
-      propertyPath: m_VertexStreams.Array.data[3]
-      value: 4
-      objectReference: {fileID: 0}
-    - target: {fileID: 3439752195844249964, guid: 15e3f49389140c14a974e361a2943f40,
-        type: 3}
-      propertyPath: _vfxPositionOffset.y
-      value: 2.5
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 15e3f49389140c14a974e361a2943f40, type: 3}
 --- !u!4 &66996581 stripped
@@ -2048,29 +2028,13 @@ PrefabInstance:
     m_TransformParent: {fileID: 0}
     m_Modifications:
     - target: {fileID: 336566618, guid: 2cc64da46eb2d214d94b04bbf3164df9, type: 3}
-      propertyPath: _shipChanger
-      value: 
-      objectReference: {fileID: 0}
-    - target: {fileID: 336566618, guid: 2cc64da46eb2d214d94b04bbf3164df9, type: 3}
       propertyPath: pirateCounter
       value: 
       objectReference: {fileID: 1434882382}
-    - target: {fileID: 1189042815, guid: 2cc64da46eb2d214d94b04bbf3164df9, type: 3}
-      propertyPath: _shipChanger
-      value: 
-      objectReference: {fileID: 0}
-    - target: {fileID: 1189042817, guid: 2cc64da46eb2d214d94b04bbf3164df9, type: 3}
-      propertyPath: _shipChanger
-      value: 
-      objectReference: {fileID: 0}
     - target: {fileID: 1189042817, guid: 2cc64da46eb2d214d94b04bbf3164df9, type: 3}
       propertyPath: _pirateCounter
       value: 
       objectReference: {fileID: 1434882382}
-    - target: {fileID: 1267231508, guid: 2cc64da46eb2d214d94b04bbf3164df9, type: 3}
-      propertyPath: _shipChanger
-      value: 
-      objectReference: {fileID: 0}
     - target: {fileID: 1267231508, guid: 2cc64da46eb2d214d94b04bbf3164df9, type: 3}
       propertyPath: pirateCounter
       value: 
@@ -2144,11 +2108,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: PlayerNew
-      objectReference: {fileID: 0}
-    - target: {fileID: 8069271252736553373, guid: 2cc64da46eb2d214d94b04bbf3164df9,
-        type: 3}
-      propertyPath: _shipChanger
-      value: 
       objectReference: {fileID: 0}
     - target: {fileID: 8069271252736553373, guid: 2cc64da46eb2d214d94b04bbf3164df9,
         type: 3}

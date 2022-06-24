@@ -156,7 +156,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: abfac43ce9645404ea6b3ca5d890924e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _activateDistance: 50
+  _activateDistance: 30
 --- !u!65 &8963588683158464638
 BoxCollider:
   m_ObjectHideFlags: 0

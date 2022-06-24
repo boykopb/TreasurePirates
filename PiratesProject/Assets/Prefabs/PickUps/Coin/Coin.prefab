@@ -118,7 +118,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _onPickUpVFX: {fileID: 100006, guid: 8fc06027b01064e4f885fd8dd2929310, type: 3}
   _onPickUpSFX: {fileID: 8300000, guid: 13325bb7f3654f74fbd72f4c996d3be5, type: 3}
-  _vfxPositionOffset: {x: 0, y: 1, z: -1}
+  _vfxPositionOffset: {x: 0, y: 2.5, z: -1}
 --- !u!135 &798965415
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -153,6 +153,21 @@ PrefabInstance:
         type: 3}
       propertyPath: m_IsActive
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2946223095280311966, guid: 16966713336d54d4a96c67725c97301c,
+        type: 3}
+      propertyPath: m_VertexStreams.Array.data[1]
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2946223095280311966, guid: 16966713336d54d4a96c67725c97301c,
+        type: 3}
+      propertyPath: m_VertexStreams.Array.data[2]
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 2946223095280311966, guid: 16966713336d54d4a96c67725c97301c,
+        type: 3}
+      propertyPath: m_VertexStreams.Array.data[3]
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 2946223095280312032, guid: 16966713336d54d4a96c67725c97301c,
         type: 3}
