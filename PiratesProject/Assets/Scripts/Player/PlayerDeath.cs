@@ -21,7 +21,7 @@ namespace Player
     private void Start()
     {
       
-      EventManager.Current.OnGameOver += PlayDeath;
+      EventManager.Current.OnGameLose += PlayDeath;
     }
 
     private void PlayDeath()

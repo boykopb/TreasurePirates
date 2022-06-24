@@ -67,6 +67,7 @@ namespace Managers
     {
       yield return new WaitForSeconds(_waitTimeBeforeFinishLevel);
       OnLevelFinishedEvent?.Invoke();
+      EventManager.Current.GameWin();
     }
 
     private bool IsBoatReachedStopPoint() => 

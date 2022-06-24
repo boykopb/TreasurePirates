@@ -7,7 +7,10 @@ namespace Managers
   {
     public Action<int> OnChangedCurrentValue;
     public Action<int> OnChangedCountPirate;
-    public Action OnGameOver;
+    public Action OnShipChanged;
+    public Action OnGameLose;
+    public Action OnGameWin;
+    public Action OnStartedGame;
 
     public static EventManager Current;
 
@@ -16,9 +19,19 @@ namespace Managers
       Current = this;
     }
 
-    public void GameOver()
+    public void GameLose()
     {
-      OnGameOver?.Invoke();
+      OnGameLose?.Invoke();
+    }
+
+    public void GameWin()
+    {
+      OnGameWin?.Invoke();
+    }
+
+    public void StartGame()
+    {
+      OnStartedGame?.Invoke();
     }
 
     public void ChangedCurrentValue(int currentValue)
