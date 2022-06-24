@@ -1,24 +1,16 @@
 using System.Collections;
-using Managers;
 using Player;
 using UnityEngine;
 
 [RequireComponent(typeof(Collider))]
 public class DrownToWaterByTrigger : MonoBehaviour
 {
-  [Header("Controlled components")] 
   [SerializeField] private MonoBehaviour[] _setOffComponents;
-
-  [Header("Params")] 
-  [SerializeField, Range(0, 5)] protected int _countPirateToDestroy = 1;
   [SerializeField] private Vector3 _endRotation = new Vector3(-120f, 180f, 0);
   [SerializeField] private float _endPositionY = -1f;
   [SerializeField] private float _lerpRate = 15f;
   [SerializeField] private float _endScaleXYZ = 0.5f;
-  [SerializeField] private float _objectDestroyTime = 3f;
 
-  [Header("FX")] 
-  [SerializeField] private AudioClip _waterDrownSfx;
 
   private Collider _collider;
   private bool _isHit;
@@ -37,17 +29,13 @@ public class DrownToWaterByTrigger : MonoBehaviour
     _isHit = true;
 
     SetOffComponents();
-
-    AudioManager.Instance.PlaySFX(_waterDrownSfx, 0.3f);
-    EventManager.Current.ChangedCountPirate(-_countPirateToDestroy);
-
     StartCoroutine(DrownRoutine());
-    Destroy(gameObject, _objectDestroyTime);
   }
 
   private void SetOffComponents()
   {
-    _collider.enabled = false;
+    if (_collider)
+      _collider.enabled = false;
 
     for (var i = 0; i < _setOffComponents.Length; i++)
       _setOffComponents[i].enabled = false;

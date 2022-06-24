@@ -96,6 +96,7 @@ GameObject:
   - component: {fileID: 1556800273}
   - component: {fileID: 8963588683158464638}
   - component: {fileID: 434110561}
+  - component: {fileID: 1581070361}
   m_Layer: 0
   m_Name: Turrel
   m_TagString: Untagged
@@ -182,13 +183,29 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _setOffComponents:
   - {fileID: 1468805236043908801}
-  _countPirateToDestroy: 1
   _endRotation: {x: -120, y: 180, z: 0}
   _endPositionY: -1
   _lerpRate: 15
   _endScaleXYZ: 0.5
-  _objectDestroyTime: 3
-  _waterDrownSfx: {fileID: 8300000, guid: acc5576a30d70684794a48c37f8f4ba5, type: 3}
+--- !u!114 &1581070361
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1468805236043908803}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 12c38b4642dab43c889931275e85ca21, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _countPirate: 1
+  _typeTrigger: 1
+  _isDiedAfterTrigger: 1
+  _destroyDelayTime: 3
+  _audioClip: {fileID: 8300000, guid: acc5576a30d70684794a48c37f8f4ba5, type: 3}
+  _effectAfterTrigger: {fileID: 0}
+  _audioClipPlayDelayTime: 0.3
 --- !u!1 &1468805236420364327
 GameObject:
   m_ObjectHideFlags: 0

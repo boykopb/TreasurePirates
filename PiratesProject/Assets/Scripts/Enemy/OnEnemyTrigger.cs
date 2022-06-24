@@ -1,9 +1,5 @@
-using System;
-using System.Collections;
-using System.Collections.Generic;
 using Managers;
 using Player;
-using Unity.Mathematics;
 using UnityEngine;
 
 namespace Enemy
@@ -13,15 +9,20 @@ namespace Enemy
         Add,
         Remove
     }
-    public class Trigger : MonoBehaviour
+    public class OnEnemyTrigger : MonoBehaviour
     {
+        [Header("Params")]
         [SerializeField] protected int _countPirate;
         [SerializeField] private TypeOfTrigger _typeTrigger;
         [SerializeField] private bool _isDiedAfterTrigger = true;
-        [SerializeField] private AudioSource _audio;
+        [SerializeField] private float _destroyDelayTime;
+        
+        [Header("Effects")]
+        [SerializeField] private AudioClip _audioClip;
         [SerializeField] private GameObject _effectAfterTrigger;
-
-
+        [SerializeField] private float _audioClipPlayDelayTime;
+      
+        
         private bool _isHit;
         private void OnTriggerEnter(Collider other)
         {
@@ -51,9 +52,11 @@ namespace Enemy
         {
             if(_effectAfterTrigger)
                 Instantiate(_effectAfterTrigger, transform.position, Quaternion.identity);
-            if(_audio)
-                _audio.Play();
-            Destroy(gameObject);
+            
+            if(_audioClip)
+                AudioManager.Instance.PlaySFX(_audioClip, _audioClipPlayDelayTime);
+            
+            Destroy(gameObject, _destroyDelayTime);
         }
     }
 }
