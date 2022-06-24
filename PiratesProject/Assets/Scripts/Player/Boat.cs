@@ -17,11 +17,14 @@ namespace Player
         [SerializeField] private ShipChanger _shipChanger;
 
         [SerializeField] private List<GameObject> _pirates = new List<GameObject>();
+
+        private int _countPirate;
         void Start()
         {
             EventManager.Current.OnChangedCurrentValue += OnChangedCurrentValue;
             EventManager.Current.OnShipChanged += OnShipChanged;
             FillPirates(pirateCounter.Count);
+            _countPirate = pirateCounter.Count;
         }
 
         private void FillPirates(int newCountPirate)
@@ -84,7 +87,7 @@ namespace Player
             GameObject obj = _pirates[index].gameObject;
             _pirates.Remove(_pirates[index]);
             obj.transform.SetParent(null);
-        
+
             if (obj.TryGetComponent(out Pirate pirate))
             {
                 if (pirate.TryGetComponent(out Rigidbody rigidbody))
@@ -117,6 +120,17 @@ namespace Player
             _shipChanger.OnChangedCurrentValue(currentValue);
             if(gameObject.activeSelf)
                 FillPirates(currentValue);
+        }
+
+        private void RemoveExtraPirates(int currentValue)
+        {
+            if(pirateCounter.Count > currentValue)
+            {
+                for (int i = pirateCounter.Count - 1; i > currentValue - 1; i--)
+                {
+                    RemovePirate(i);
+                }
+            }
         }
     
         private void OnShipChanged()

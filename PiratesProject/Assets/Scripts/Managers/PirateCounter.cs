@@ -22,7 +22,7 @@ namespace Managers
             if (Count <= 0)
             {
                 Count = 0;
-                EventManager.Current.GameOver();
+                EventManager.Current.GameLose();
                 //return;
             }
         
