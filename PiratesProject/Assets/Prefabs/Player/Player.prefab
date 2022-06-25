@@ -453,7 +453,7 @@ MonoBehaviour:
   - {fileID: 8069271252736553366}
   _pirateCounter: {fileID: 0}
   _minBorder: 0
-  _upgradeSFX: {fileID: 8300000, guid: 5e84b903be3b3fc45bb44a9b256c005e, type: 3}
+  _upgradeSFX: {fileID: 8300000, guid: ec3e377625876094ba18821ac31118c1, type: 3}
   _upgradeVFX: {fileID: 165102, guid: 4de72d65c2293424cbe6461a89fe2997, type: 3}
   _curveScaler: {fileID: 5935782331239647502}
 --- !u!114 &1189042817
