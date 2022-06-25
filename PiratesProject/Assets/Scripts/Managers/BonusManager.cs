@@ -5,16 +5,17 @@ namespace Managers
 {
   public class BonusManager : MonoBehaviour
   {
-    [Header("Controlled components")] [SerializeField]
-    private CameraManager _cameraManager;
-
+    [Header("Controlled components")] 
+    [SerializeField] private CameraManager _cameraManager;
     [SerializeField] private PirateCounter _pirateCounter;
     [SerializeField] private CoinManager _coinManager;
 
-    [Header("Params")] [SerializeField] private float _timeBeforeCameraChange = 0.6f;
-    [SerializeField] private float _timeBeforeNextBonus = 1.8f;
+    [Header("Params")]
+    [SerializeField] private float _timeBeforeCameraChange = 0.6f;
+    [SerializeField] private float _timeBeforeNextBonus = 1.2f;
 
-    [Header("FX")] [SerializeField] private GameObject[] _treasures;
+    [Header("FX")]
+    [SerializeField] private GameObject[] _treasures;
     [SerializeField] private AudioClip _goldMultiplySfx;
 
 
@@ -44,11 +45,13 @@ namespace Managers
         yield return new WaitForSeconds(_timeBeforeNextBonus);
       }
 
+      EventManager.Current.GameWin();
+
+      yield return new WaitForSeconds(1f);
+
       if (_pirateCounter.Count > 1)
         MultiplyCoins();
-      
-      
-      //TODO - STOP GAME AND SHOW WIN SCREEN
+
     }
 
     private void MultiplyCoins()

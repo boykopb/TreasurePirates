@@ -10,7 +10,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 71c1514a6bd24e1e882cebbe1904ce04, type: 3}
-  m_Name: LilitaOne-Regular Outline_Extended ASCII_40 SDF
+  m_Name: LilitaOne-Regular Outline_Extended ASCII_40 SDF Fix
   m_EditorClassIdentifier: 
   hashCode: 1009016613
   material: {fileID: 7746803525459343344}
@@ -26,7 +26,7 @@ MonoBehaviour:
     m_StyleName: Regular
     m_PointSize: 40
     m_Scale: 1
-    m_LineHeight: 45.72
+    m_LineHeight: 40
     m_AscentLine: 36.92
     m_CapLine: 29
     m_MeanLine: 21
@@ -275,9 +275,9 @@ MonoBehaviour:
       m_HorizontalAdvance: 26
     m_GlyphRect:
       m_X: 275
-      m_Y: 353
+      m_Y: 350
       m_Width: 24
-      m_Height: 30
+      m_Height: 35
     m_Scale: 1
     m_AtlasIndex: 0
   - m_Index: 20
@@ -291,7 +291,7 @@ MonoBehaviour:
       m_X: 727
       m_Y: 10
       m_Width: 15
-      m_Height: 28
+      m_Height: 30
     m_Scale: 1
     m_AtlasIndex: 0
   - m_Index: 21
@@ -305,7 +305,7 @@ MonoBehaviour:
       m_X: 553
       m_Y: 256
       m_Width: 19
-      m_Height: 29
+      m_Height: 30
     m_Scale: 1
     m_AtlasIndex: 0
   - m_Index: 22
@@ -313,8 +313,8 @@ MonoBehaviour:
       m_Width: 20
       m_Height: 30
       m_HorizontalBearingX: 0
-      m_HorizontalBearingY: 29
-      m_HorizontalAdvance: 21
+      m_HorizontalBearingY: 30
+      m_HorizontalAdvance: 22
     m_GlyphRect:
       m_X: 411
       m_Y: 160
@@ -325,7 +325,7 @@ MonoBehaviour:
   - m_Index: 23
     m_Metrics:
       m_Width: 23
-      m_Height: 29
+      m_Height: 30
       m_HorizontalBearingX: 0
       m_HorizontalBearingY: 29
       m_HorizontalAdvance: 24
@@ -333,13 +333,13 @@ MonoBehaviour:
       m_X: 539
       m_Y: 158
       m_Width: 23
-      m_Height: 29
+      m_Height: 30
     m_Scale: 1
     m_AtlasIndex: 0
   - m_Index: 24
     m_Metrics:
       m_Width: 18
-      m_Height: 29
+      m_Height: 30
       m_HorizontalBearingX: 1
       m_HorizontalBearingY: 28
       m_HorizontalAdvance: 21
@@ -347,7 +347,7 @@ MonoBehaviour:
       m_X: 606
       m_Y: 399
       m_Width: 18
-      m_Height: 29
+      m_Height: 30
     m_Scale: 1
     m_AtlasIndex: 0
   - m_Index: 25
@@ -367,15 +367,15 @@ MonoBehaviour:
   - m_Index: 26
     m_Metrics:
       m_Width: 20
-      m_Height: 29
+      m_Height: 30
       m_HorizontalBearingX: 0
-      m_HorizontalBearingY: 28
+      m_HorizontalBearingY: 29
       m_HorizontalAdvance: 20
     m_GlyphRect:
       m_X: 647
       m_Y: 59
       m_Width: 20
-      m_Height: 29
+      m_Height: 30
     m_Scale: 1
     m_AtlasIndex: 0
   - m_Index: 27
@@ -5285,7 +5285,7 @@ Material:
     - _MainTex:
         m_Texture: {fileID: 2800000, guid: b69bbc81e50d34f86a06fa187435ee02, type: 3}
         m_Scale: {x: 1, y: 1}
-        m_Offset: {x: 0, y: 0}
+        m_Offset: {x: 0, y: -0.002}
     - _MaskTex:
         m_Texture: {fileID: 0}
         m_Scale: {x: 1, y: 1}

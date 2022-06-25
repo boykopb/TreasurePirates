@@ -2512,7 +2512,7 @@ MonoBehaviour:
   boldStyle: 0.75
   boldSpacing: 7
   italicStyle: 35
-  tabSize: 10
+  tabSize: 20
 --- !u!21 &3074828514974314926
 Material:
   serializedVersion: 8
@@ -2544,7 +2544,7 @@ Material:
     - _MainTex:
         m_Texture: {fileID: 2800000, guid: 51bda5a7ed19c4c39bbb02ae0c80c2c1, type: 3}
         m_Scale: {x: 1, y: 1}
-        m_Offset: {x: 0, y: 0}
+        m_Offset: {x: 0, y: -0.003}
     - _MaskTex:
         m_Texture: {fileID: 0}
         m_Scale: {x: 1, y: 1}

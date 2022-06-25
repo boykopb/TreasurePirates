@@ -10,7 +10,7 @@ namespace Managers
   
     public int CoinsCollectedCount { get; private set; }
 
-    public event Action<int> OnCoinCollect;
+    public event Action OnCoinCollect;
     
     private void Awake()
     {
@@ -20,7 +20,7 @@ namespace Managers
     public void CollectCoin()
     {
       CoinsCollectedCount++;
-      OnCoinCollect?.Invoke(CoinsCollectedCount);
+      OnCoinCollect?.Invoke();
     }
 
     private void GetAndInitCoinsOnScene()
@@ -35,7 +35,7 @@ namespace Managers
     public void MultiplyCoins(int multiplier)
     {
       CoinsCollectedCount *= multiplier;
-      OnCoinCollect?.Invoke(CoinsCollectedCount);
+      OnCoinCollect?.Invoke();
     }
   }
 }
