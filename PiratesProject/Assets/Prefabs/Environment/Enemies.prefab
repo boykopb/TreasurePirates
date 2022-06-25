@@ -263,6 +263,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Whirewind
       objectReference: {fileID: 0}
+    - target: {fileID: 7036197446035803912, guid: ed60322ca920246f9bb6ac618d74e201,
+        type: 3}
+      propertyPath: _isDiedAfterTrigger
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 7036197446035803913, guid: ed60322ca920246f9bb6ac618d74e201,
         type: 3}
       propertyPath: m_RootOrder
@@ -558,6 +563,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Whirewind (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 7036197446035803912, guid: ed60322ca920246f9bb6ac618d74e201,
+        type: 3}
+      propertyPath: _isDiedAfterTrigger
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 7036197446035803913, guid: ed60322ca920246f9bb6ac618d74e201,
         type: 3}
       propertyPath: m_RootOrder
@@ -612,6 +622,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7036197446035803914, guid: ed60322ca920246f9bb6ac618d74e201,
+        type: 3}
+      propertyPath: _currentDirection
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7036197446321852521, guid: ed60322ca920246f9bb6ac618d74e201,
         type: 3}
