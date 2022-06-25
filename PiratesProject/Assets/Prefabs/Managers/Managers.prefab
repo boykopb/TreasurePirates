@@ -459,7 +459,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _onGameWinSfx: {fileID: 8300000, guid: f2550f92922d74248922d6184f32f68c, type: 3}
-  _onGameLooseSfx: {fileID: 8300000, guid: a95a49e8527c2ab44a18abf1ab9bfdb7, type: 3}
 --- !u!1 &8876781487111374157
 GameObject:
   m_ObjectHideFlags: 0
@@ -504,6 +503,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e59dc6fa66bf46648eb42bcca23890cb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _onPauseSFX: {fileID: 8300000, guid: 9ad0bf29e95214440a2a873b2f5a5375, type: 3}
 --- !u!1 &8876781487257022962
 GameObject:
   m_ObjectHideFlags: 0

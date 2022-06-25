@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 2144346364574276920}
   - component: {fileID: 2144346364574276921}
   - component: {fileID: 5416430537733934958}
+  - component: {fileID: 1893679006830123075}
   m_Layer: 0
   m_Name: Bomb
   m_TagString: Untagged
@@ -49,8 +50,10 @@ MonoBehaviour:
   _countPirate: 1
   _typeTrigger: 1
   _isDiedAfterTrigger: 1
-  _audio: {fileID: 0}
+  _destroyDelayTime: 0
+  _audioClip: {fileID: 0}
   _effectAfterTrigger: {fileID: 0}
+  _audioClipPlayDelayTime: 0
 --- !u!136 &5416430537733934958
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -65,6 +68,19 @@ CapsuleCollider:
   m_Height: 3.16
   m_Direction: 1
   m_Center: {x: 0, y: 1.2, z: 0}
+--- !u!114 &1893679006830123075
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2144346364574276917}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 36aa02d38bb10b548bc7b8879596b15c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  WaterVolumeHelper: {fileID: 0}
 --- !u!1001 &6472312996778542113
 PrefabInstance:
   m_ObjectHideFlags: 0
