@@ -6,6 +6,6 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
-    path: Assets/Scenes/Delete_PavelSceneOld2.unity
-    guid: fc967860e2508924e943ba0223c2ed3b
+    path: Assets/Scenes/PavelSceneFullEnding_BuildScene.unity
+    guid: 6481bfdfd6d7f3c4dbc18c0c292ba2e0
   m_configObjects: {}
