@@ -17,6 +17,7 @@ namespace Managers
     [Header("FX")]
     [SerializeField] private GameObject[] _treasures;
     [SerializeField] private AudioClip _goldMultiplySfx;
+    [SerializeField] private AudioClip _treasureAppearSfx;
 
 
     private void Start()
@@ -42,6 +43,8 @@ namespace Managers
         _cameraManager.SetNextTarget(i);
         yield return new WaitForSeconds(_timeBeforeCameraChange);
         _treasures[i].SetActive(true);
+        
+        AudioManager.Instance.PlaySFX(_treasureAppearSfx);
         yield return new WaitForSeconds(_timeBeforeNextBonus);
       }
 

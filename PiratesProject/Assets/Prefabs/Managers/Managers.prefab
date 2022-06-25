@@ -44,17 +44,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ee35b25c37c2048b6b31c23461eda440, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _coinManager: {fileID: 8876781487863211541}
+  _titleScreen: {fileID: 0}
+  _tutorialScreen: {fileID: 0}
   _loseMenu: {fileID: 0}
   _winMenu: {fileID: 0}
-  _gameMenu: {fileID: 0}
-  _startMenu: {fileID: 0}
-  _scoreText: {fileID: 0}
-  _scoreAfterGameText: {fileID: 0}
-  _prevTextScore: 'Coins: '
-  _prevAfterGameTextScore: 'Your coins: '
-  _timeToActivateLoseMenu: 1.5
-  _timeToActivateWinMenu: 1.5
-  _coinManager: {fileID: 8876781487863211541}
+  _inGameGUI: {fileID: 0}
+  _currentCoinText: {fileID: 0}
+  _coinResultsLabel: {fileID: 0}
+  _coinResultsText: {fileID: 0}
+  _backgroundCurtain: {fileID: 0}
+  _coinBonusAddLerpRate: 0.01
 --- !u!1 &1935413990254614021
 GameObject:
   m_ObjectHideFlags: 0
@@ -275,7 +275,7 @@ MonoBehaviour:
   _pirateCounter: {fileID: 8876781487571202013}
   _coinManager: {fileID: 8876781487863211541}
   _timeBeforeCameraChange: 0.6
-  _timeBeforeNextBonus: 1.8
+  _timeBeforeNextBonus: 1.2
   _treasures:
   - {fileID: 0}
   - {fileID: 0}
@@ -285,6 +285,7 @@ MonoBehaviour:
   - {fileID: 0}
   - {fileID: 0}
   _goldMultiplySfx: {fileID: 8300000, guid: 3581101cd18d34940aa72fa5220515c7, type: 3}
+  _treasureAppearSfx: {fileID: 8300000, guid: de8a8a41bc8122c4b954c4d776d6a358, type: 3}
 --- !u!1 &8876781486930714345
 GameObject:
   m_ObjectHideFlags: 0
@@ -457,6 +458,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7ef73d073ad174d5087712ea31f8cfd0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _onGameWinSfx: {fileID: 8300000, guid: f2550f92922d74248922d6184f32f68c, type: 3}
+  _onGameLooseSfx: {fileID: 8300000, guid: a95a49e8527c2ab44a18abf1ab9bfdb7, type: 3}
 --- !u!1 &8876781487111374157
 GameObject:
   m_ObjectHideFlags: 0
@@ -496,12 +499,11 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8876781487111374157}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: e59dc6fa66bf46648eb42bcca23890cb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _damagePlayer: {fileID: 0}
 --- !u!1 &8876781487257022962
 GameObject:
   m_ObjectHideFlags: 0

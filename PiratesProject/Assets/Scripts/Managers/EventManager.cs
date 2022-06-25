@@ -5,6 +5,8 @@ namespace Managers
 {
   public class EventManager : MonoBehaviour
   {
+    [SerializeField] private AudioClip _onGameWinSfx;
+    
     public Action<int> OnChangedCurrentValue;
     public Action<int> OnChangedCountPirate;
 
@@ -35,11 +37,16 @@ namespace Managers
     public void GameWin()
     {
       OnGameWin?.Invoke();
+      
+      AudioManager.Instance.StopLevelMusic();
+      AudioManager.Instance.PlaySFX(_onGameWinSfx, 1f, false);
+
     }
 
     public void GameLose()
     {
       OnGameLose?.Invoke();
+      AudioManager.Instance.StopLevelMusic();
     }
 
     public void ChangedCurrentValue(int currentValue)

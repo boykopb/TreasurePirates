@@ -7,12 +7,11 @@ using UnityEngine.UI;
 
 public class UIController : MonoBehaviour
 {
-  [Header("Controlled components")] [SerializeField]
-  private CoinManager _coinManager;
+  [Header("Controlled components")] 
+  [SerializeField] private CoinManager _coinManager;
 
-  [Header("Controlled UI elements")] [SerializeField]
-  private GameObject _titleScreen;
-
+  [Header("Controlled UI elements")]
+  [SerializeField] private GameObject _titleScreen;
   [SerializeField] private GameObject _tutorialScreen;
   [SerializeField] private GameObject _loseMenu;
   [SerializeField] private GameObject _winMenu;
@@ -20,9 +19,8 @@ public class UIController : MonoBehaviour
   [SerializeField] private TMP_Text _currentCoinText;
 
 
-  [Header("Results coins screen")] [SerializeField]
-  private GameObject _coinResultsLabel;
-
+  [Header("Results coins screen")] 
+  [SerializeField] private GameObject _coinResultsLabel;
   [SerializeField] private TMP_Text _coinResultsText;
   [SerializeField] private Image _backgroundCurtain;
   [SerializeField] private float _coinBonusAddLerpRate = 0.01f;
