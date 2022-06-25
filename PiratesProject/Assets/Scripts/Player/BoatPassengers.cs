@@ -6,13 +6,17 @@ namespace Player
 {
   public class BoatPassengers : MonoBehaviour
   {
+    [Header("Ship Settings")]
     [SerializeField] private PirateCounter _pirateCounter;
     [SerializeField] private ShipChanger _shipChanger;
-    [SerializeField] private GameObject _prefabPirate;
     [SerializeField] private Transform[] _startPositionOnShipTransform;
+   
+    [Header("Pirate Settings")]
+    [SerializeField] private GameObject _prefabPirate;
     [SerializeField] private float _forceToSide = 2f;
-    [SerializeField] private List<GameObject> _pirates = new List<GameObject>();
-
+    [SerializeField] private float _forceZ = 1f;
+    
+    private List<GameObject> _pirates = new List<GameObject>();
     private List<BoatSeatsInfo> _boatSeatsInfos;
 
     void Start()
@@ -98,6 +102,8 @@ namespace Player
     {
       GameObject obj = _pirates[index].gameObject;
       _pirates.Remove(_pirates[index]);
+
+      obj.GetComponent<Pirate>().Death();
       obj.transform.SetParent(null);
 
       ThrowPirateToWater(index, obj);
@@ -121,16 +127,17 @@ namespace Player
       var currentShipIndex = _shipChanger.GetCurrentShipIndex();
       var currentBoat = _boatSeatsInfos[currentShipIndex];
 
-      Vector3 directionForce = Vector3.zero;
+      Vector3 directionForce = transform.forward * _forceZ;
       directionForce += transform.up;
 
       //Вычисляем позицию пирата по линии
       int indexX = index % currentBoat.CountInRow;
       //Проверяем в какой стороне сидит пират
       if (indexX >= currentBoat.CountInRow / 2)
-        directionForce += transform.right * _forceToSide;
+        directionForce += transform.right;
       else
-        directionForce -= transform.right * _forceToSide;
+        directionForce -= transform.right;
+      directionForce *= _forceToSide;
 
       return directionForce;
     }

@@ -5,6 +5,7 @@ namespace Player
     public class Pirate : MonoBehaviour
     {
         public Vector3 DirectionForce { private get; set; }
+        public bool IsDeath { private set; get; }
 
         [SerializeField] private float _forceJump = 10f;
         [SerializeField] private float _maxForceTorgue = 1000f;
@@ -32,10 +33,9 @@ namespace Player
             _rigidbody.AddTorque(directionTorque * randomForce, ForceMode.Acceleration);
         }
 
-        public void JumpFromBoat()
+        public void Death()
         {
-        
+            IsDeath = true;
         }
-    
     }
 }

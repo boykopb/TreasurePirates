@@ -9677,7 +9677,7 @@ GameObject:
   - component: {fileID: 922697292598328750}
   - component: {fileID: 922697292598305518}
   m_Layer: 0
-  m_Name: WaterSplashSharp
+  m_Name: WaterPirateSplash
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

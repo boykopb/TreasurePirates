@@ -11,22 +11,14 @@ namespace Enemy
         {
             if (other.TryGetComponent(out Pirate pirate))
             {
-                CreateEffect(other.transform.position);
+                if(pirate.IsDeath)
+                    CreateEffect(other.transform.position);
             }
         }
 
         private void CreateEffect(Vector3 spawnPos)
         {
             Instantiate(_effectDeathPirate, spawnPos, Quaternion.identity);
-        
-        }
-        void Start()
-        {
-        
-        }
-
-        void Update()
-        {
         
         }
     }

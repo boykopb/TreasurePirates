@@ -93,8 +93,8 @@ GameObject:
   m_Component:
   - component: {fileID: 8535468648886124363}
   - component: {fileID: 6466837047052865530}
-  - component: {fileID: 1174542244627951170}
   - component: {fileID: -7725292905403921141}
+  - component: {fileID: 3346140685618247299}
   m_Layer: 0
   m_Name: Pirate
   m_TagString: Untagged
@@ -135,19 +135,6 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
---- !u!65 &1174542244627951170
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4923197656084891360}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 0.3, y: 0.3, z: 0.3}
-  m_Center: {x: 0, y: 0, z: 0}
 --- !u!114 &-7725292905403921141
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -161,9 +148,22 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _forceJump: 90
-  _maxForceTorgue: 100
-  _minForceTorgue: 1000
+  _maxForceTorgue: 1000
+  _minForceTorgue: 100
   _animator: {fileID: 581929344287769092}
+--- !u!135 &3346140685618247299
+SphereCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4923197656084891360}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Radius: 0.15
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1001 &581929344280305112
 PrefabInstance:
   m_ObjectHideFlags: 0

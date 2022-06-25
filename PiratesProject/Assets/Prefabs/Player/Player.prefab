@@ -27,7 +27,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 158741614}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 1.41, z: 1.859}
+  m_LocalPosition: {x: 0, y: 1.57, z: 1.361}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -46,7 +46,7 @@ BoxCollider:
   m_Enabled: 1
   serializedVersion: 2
   m_Size: {x: 0.6, y: 2.5, z: 0.22}
-  m_Center: {x: 0, y: 0, z: 0}
+  m_Center: {x: 0, y: -0.42, z: 0}
 --- !u!114 &158741616
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -70,8 +70,8 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 0.7, y: 1.43, z: 3.17}
-  m_Center: {x: 0, y: -0.06, z: -1.87}
+  m_Size: {x: 0.7, y: 1.43, z: 2.4634805}
+  m_Center: {x: 0, y: -0.1, z: -1.5167401}
 --- !u!1 &641626686
 GameObject:
   m_ObjectHideFlags: 0
@@ -99,7 +99,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 641626686}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 1.681, z: 1.25}
+  m_LocalPosition: {x: 0, y: 1.837, z: 0.979}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -118,7 +118,7 @@ BoxCollider:
   m_Enabled: 1
   serializedVersion: 2
   m_Size: {x: 0.6, y: 2.5, z: 0.22}
-  m_Center: {x: 0, y: 0, z: 0}
+  m_Center: {x: 0, y: -0.59, z: 0}
 --- !u!114 &641626688
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -142,8 +142,8 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 0.7, y: 1.51, z: 2}
-  m_Center: {x: 0, y: -0.21, z: -1.3}
+  m_Size: {x: 0.7, y: 1.51, z: 1.4209249}
+  m_Center: {x: 0, y: -0.20999998, z: -1.0104622}
 --- !u!1 &1372026987
 GameObject:
   m_ObjectHideFlags: 0
@@ -216,7 +216,6 @@ GameObject:
   m_Component:
   - component: {fileID: 5569511137334950798}
   - component: {fileID: 336566619}
-  - component: {fileID: 336566620}
   m_Layer: 0
   m_Name: Ship_Small
   m_TagString: Untagged
@@ -258,19 +257,6 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
---- !u!65 &336566620
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2851681754517546488}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 0
-  serializedVersion: 2
-  m_Size: {x: 0.7, y: 1.54, z: 2.37}
-  m_Center: {x: 0, y: 0.73, z: 0.29}
 --- !u!1 &3984571568697186143
 GameObject:
   m_ObjectHideFlags: 0
@@ -484,14 +470,14 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _pirateCounter: {fileID: 0}
   _shipChanger: {fileID: 3733842197783500038}
-  _prefabPirate: {fileID: 4923197656084891360, guid: 68c8ea5f0a482436fa13ec1121e99540,
-    type: 3}
   _startPositionOnShipTransform:
   - {fileID: 1573030810}
   - {fileID: 1372026988}
   - {fileID: 8069271252921132646}
-  _forceToSide: 10
-  _pirates: []
+  _prefabPirate: {fileID: 4923197656084891360, guid: 68c8ea5f0a482436fa13ec1121e99540,
+    type: 3}
+  _forceToSide: 1
+  _forceZ: 1.2
 --- !u!114 &5935782331239647502
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -738,7 +724,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 484233722, guid: 7e0fbd77b8b0c4554a14718988afd28d, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 2.41
+      value: 2.31
       objectReference: {fileID: 0}
     - target: {fileID: 484233723, guid: 7e0fbd77b8b0c4554a14718988afd28d, type: 3}
       propertyPath: m_Size.x
@@ -900,8 +886,8 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 0.7, y: 0.98, z: 4.8}
-  m_Center: {x: 0, y: -0.57, z: -2.16}
+  m_Size: {x: 0.7, y: 0.98000324, z: 3.77}
+  m_Center: {x: 0, y: 0.58, z: -1.99}
 --- !u!114 &2070240425
 MonoBehaviour:
   m_ObjectHideFlags: 0
