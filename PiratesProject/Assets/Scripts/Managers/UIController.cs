@@ -26,12 +26,13 @@ public class UIController : MonoBehaviour
         EventManager.Current.OnGameWin += OnGameWin;
         EventManager.Current.OnStartedGame += OnStartedGame;
         
+        
         _coinManager.OnCoinCollect += CoinManagerOnOnCoinCollect;
     }
     
-    private void CoinManagerOnOnCoinCollect()
+    private void CoinManagerOnOnCoinCollect(int currentCountCoin)
     {
-        SetCurrentScore(_coinManager.CoinsCollectedCount);
+        SetCurrentScore(currentCountCoin);
     }
     
     private void SetCurrentScore(int currentScore)

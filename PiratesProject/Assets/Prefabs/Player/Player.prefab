@@ -217,7 +217,6 @@ GameObject:
   - component: {fileID: 5569511137334950798}
   - component: {fileID: 336566619}
   - component: {fileID: 336566620}
-  - component: {fileID: 336566618}
   m_Layer: 0
   m_Name: Ship_Small
   m_TagString: Untagged
@@ -272,29 +271,6 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 0.7, y: 1.54, z: 2.37}
   m_Center: {x: 0, y: 0.73, z: 0.29}
---- !u!114 &336566618
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2851681754517546488}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c6837b2f5a5cc42458c4bebc45877486, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  pirateCounter: {fileID: 0}
-  _prefabPirate: {fileID: 4923197656084891360, guid: 68c8ea5f0a482436fa13ec1121e99540,
-    type: 3}
-  _countInRow: 2
-  _deltaZ: 0
-  _deltaX: 0.5
-  _startSpawnPos: {fileID: 1573030810}
-  _forceToSide: 2
-  _parentForPirate: {fileID: 7885966278254264294}
-  _shipChanger: {fileID: 0}
-  _pirates: []
 --- !u!1 &3984571568697186143
 GameObject:
   m_ObjectHideFlags: 0
@@ -339,7 +315,6 @@ GameObject:
   m_Component:
   - component: {fileID: 6463840671386832824}
   - component: {fileID: 1267231509}
-  - component: {fileID: 1267231508}
   m_Layer: 0
   m_Name: Ship_Medium
   m_TagString: Untagged
@@ -381,29 +356,6 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
---- !u!114 &1267231508
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5378550736253323414}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c6837b2f5a5cc42458c4bebc45877486, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  pirateCounter: {fileID: 0}
-  _prefabPirate: {fileID: 4923197656084891360, guid: 68c8ea5f0a482436fa13ec1121e99540,
-    type: 3}
-  _countInRow: 2
-  _deltaZ: 0.8
-  _deltaX: 0.45
-  _startSpawnPos: {fileID: 1372026988}
-  _forceToSide: 2
-  _parentForPirate: {fileID: 7885966278254264294}
-  _shipChanger: {fileID: 0}
-  _pirates: []
 --- !u!1 &7885966278254264295
 GameObject:
   m_ObjectHideFlags: 0
@@ -929,6 +881,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 484233724, guid: 7e0fbd77b8b0c4554a14718988afd28d, type: 3}
+    - {fileID: 183341362988168548, guid: 7e0fbd77b8b0c4554a14718988afd28d, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 7e0fbd77b8b0c4554a14718988afd28d, type: 3}
 --- !u!1 &7885966276658812160 stripped
 GameObject:

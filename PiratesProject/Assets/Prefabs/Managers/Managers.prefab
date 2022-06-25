@@ -1,5 +1,60 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
+--- !u!1 &1444768882
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1444768883}
+  - component: {fileID: 1444768884}
+  m_Layer: 0
+  m_Name: UIManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1444768883
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1444768882}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 191.90433, y: 411.21298, z: 5.618685}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 8876781487310922171}
+  m_RootOrder: 9
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1444768884
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1444768882}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ee35b25c37c2048b6b31c23461eda440, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _loseMenu: {fileID: 0}
+  _winMenu: {fileID: 0}
+  _gameMenu: {fileID: 0}
+  _startMenu: {fileID: 0}
+  _scoreText: {fileID: 0}
+  _scoreAfterGameText: {fileID: 0}
+  _prevTextScore: 'Coins: '
+  _prevAfterGameTextScore: 'Your coins: '
+  _timeToActivateLoseMenu: 1.5
+  _timeToActivateWinMenu: 1.5
+  _coinManager: {fileID: 8876781487863211541}
 --- !u!1 &1935413990254614021
 GameObject:
   m_ObjectHideFlags: 0
@@ -539,6 +594,7 @@ Transform:
   - {fileID: 8876781487735100007}
   - {fileID: 8876781487863211540}
   - {fileID: 1992043886925692384}
+  - {fileID: 1444768883}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}

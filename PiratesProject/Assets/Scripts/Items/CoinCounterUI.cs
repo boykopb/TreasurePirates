@@ -30,7 +30,7 @@ namespace Items
       _currentValueText.text = _currentValue.ToString();
 
 
-    private void UpdateNewValue()
+    private void UpdateNewValue(int currentCountCoin)
     {
       StartCoroutine(SmoothIncreaseValueRoutine());
     }

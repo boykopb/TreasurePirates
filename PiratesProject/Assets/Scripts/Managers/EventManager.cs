@@ -7,7 +7,6 @@ namespace Managers
   {
     public Action<int> OnChangedCurrentValue;
     public Action<int> OnChangedCountPirate;
-    public Action OnShipChanged;
     public Action OnGameLose;
     public Action OnGameWin;
     public Action OnStartedGame;
