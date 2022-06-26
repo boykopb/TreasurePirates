@@ -148,8 +148,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _forceJump: 90
-  _maxForceTorgue: 1000
-  _minForceTorgue: 100
+  _maxForceTorgue: 600
+  _minForceTorgue: 200
   _animator: {fileID: 581929344287769092}
 --- !u!135 &3346140685618247299
 SphereCollider:
