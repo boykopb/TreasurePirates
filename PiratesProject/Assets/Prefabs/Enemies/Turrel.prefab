@@ -136,8 +136,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 972b790898b5d458a91967734f210716, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _timeReload: 4
-  _timeToSpawnBullets: 2
+  _timeReload: 2.5
+  _timeToSpawnBullets: 0.5
   _bulletPrefab: {fileID: 3729223584799471047, guid: 40a08b532c5524fc7aa6a06a9df99674,
     type: 3}
   _spawnPosition: {fileID: 1468805238098357012}

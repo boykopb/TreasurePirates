@@ -65,7 +65,7 @@ MonoBehaviour:
   _typeTrigger: 0
   _isDiedAfterTrigger: 1
   _destroyDelayTime: 0
-  _audioClip: {fileID: 0}
+  _audioClip: {fileID: 8300000, guid: 2a46262f4830846e091a7d82b49feca4, type: 3}
   _effectAfterTrigger: {fileID: 0}
   _audioClipPlayDelayTime: 0
 --- !u!114 &1875816190
