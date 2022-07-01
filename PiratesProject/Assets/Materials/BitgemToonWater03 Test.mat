@@ -102,8 +102,8 @@ Material:
     - _SpecularHighlights: 1
     - _SrcBlend: 1
     - _Surface: 0
-    - _WaveFrequency: 1.75
-    - _WaveScale: 0.1
+    - _WaveFrequency: 1
+    - _WaveScale: 0.08
     - _WaveSpeed: 1
     - _WorkflowMode: 1
     - _ZWrite: 1
